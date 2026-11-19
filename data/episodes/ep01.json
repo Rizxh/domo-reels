@@ -1,0 +1,51 @@
+{
+  "id": "ep01",
+  "title": "Panasin Mesin 15 Menit",
+  "bgm": "audio/bgm/upbeat-01.mp3",
+  "scenes": [
+    {
+      "type": "hook",
+      "headline": "STOP manasin mobil 15 MENIT!",
+      "highlight": ["STOP", "15 MENIT!"],
+      "vo": "Masih manasin mobil lima belas menit tiap pagi? Stop dulu!",
+      "voHighlight": ["lima belas menit", "Stop"],
+      "footage": "footage/garage-idle.mp4",
+      "sfx": "audio/sfx/alert.mp3"
+    },
+    {
+      "type": "myth",
+      "text": "Mesin harus dipanaskan lama",
+      "vo": "Itu kebiasaan zaman mesin karburator.",
+      "voHighlight": ["karburator"],
+      "lottie": "lottie/clock.json",
+      "sfx": "audio/sfx/stamp.mp3"
+    },
+    {
+      "type": "fact",
+      "text": "30 s/d 60 DETIK cukup, lalu jalan pelan",
+      "highlight": ["30 s/d 60 DETIK"],
+      "counterTo": 60,
+      "counterUnit": "DETIK",
+      "vo": "Mobil injeksi sekarang cukup dipanasin tiga puluh sampai enam puluh detik, terus jalan pelan di beberapa menit pertama.",
+      "voHighlight": ["tiga puluh sampai enam puluh detik", "jalan pelan"],
+      "sfx": "audio/sfx/ding.mp3"
+    },
+    {
+      "type": "reasons",
+      "items": [
+        { "icon": "lottie/fuel.json", "label": "Boros bensin" },
+        { "icon": "lottie/thermo.json", "label": "Lebih cepat panas saat jalan santai" }
+      ],
+      "vo": "Kelamaan idle bikin boros bensin. Padahal mesin lebih cepat panas kalau dibawa jalan santai.",
+      "voHighlight": ["boros bensin", "lebih cepat panas"]
+    },
+    {
+      "type": "cta",
+      "text": "SAVE biar nggak lupa",
+      "highlight": ["SAVE"],
+      "handle": "@doktermobil",
+      "vo": "Simpan video ini, dan follow Doktermobil buat tips rawat mobil lainnya.",
+      "voHighlight": ["Simpan", "follow Doktermobil"]
+    }
+  ]
+}

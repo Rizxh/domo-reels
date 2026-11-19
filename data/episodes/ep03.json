@@ -1,0 +1,231 @@
+{
+  "id": "ep03",
+  "format": "cinema",
+  "world": "tire",
+  "title": "Ban Tebal Belum Tentu Aman",
+  "tag": "JARANG DIKETAHUI",
+  "handle": "@doktermobil",
+  "dateCode": {
+    "week": 12,
+    "year": 2015,
+    "ageYears": 11
+  },
+  "claims": [
+    {
+      "text": "Empat angka terakhir kode DOT di dinding ban adalah minggu (2 angka) dan tahun (2 angka) produksi, untuk ban produksi sejak tahun 2000.",
+      "reviewed": false
+    },
+    {
+      "text": "Ban yang dijual di Indonesia mencantumkan kode tanggal produksi 4 angka ini.",
+      "reviewed": false
+    },
+    {
+      "text": "Karet ban menua walau ban jarang dipakai (oksidasi, panas, sinar UV): mengeras, retak halus, dan cengkeramannya turun, terutama di jalan basah.",
+      "reviewed": false
+    },
+    {
+      "text": "Panduan umum pabrikan ban: setelah 5 tahun dicek rutin tiap tahun, dan diganti paling lambat 10 tahun sejak tanggal produksi walau alur masih tebal.",
+      "reviewed": false
+    },
+    {
+      "text": "Kode 1215 (minggu ke-12 tahun 2015) berarti ban berumur sekitar 11 tahun per November 2026.",
+      "reviewed": false
+    }
+  ],
+  "beats": [
+    {
+      "id": "hook",
+      "vo": "Alur ban ini masih tebal, tapi udah waktunya pensiun.",
+      "voHighlight": [
+        "masih tebal",
+        "pensiun"
+      ],
+      "texts": [
+        {
+          "id": "thick",
+          "style": "title",
+          "text": "ALUR MASIH TEBAL",
+          "cue": {
+            "word": "tebal"
+          }
+        },
+        {
+          "id": "retire",
+          "style": "title",
+          "text": "TAPI WAKTUNYA PENSIUN",
+          "accent": true,
+          "cue": {
+            "word": "pensiun"
+          }
+        }
+      ],
+      "marks": [
+        {
+          "id": "hookReveal",
+          "word": "tapi"
+        }
+      ]
+    },
+    {
+      "id": "clue",
+      "vo": "Kok bisa? Jawabannya di empat angka kecil ini.",
+      "voHighlight": [
+        "empat angka"
+      ],
+      "texts": [
+        {
+          "id": "fourDigits",
+          "style": "callout",
+          "text": "4 ANGKA INI",
+          "anchor": "dateCode",
+          "cue": {
+            "word": "empat"
+          }
+        }
+      ],
+      "marks": [
+        {
+          "id": "clueCode",
+          "word": "Jawabannya"
+        }
+      ]
+    },
+    {
+      "id": "aging",
+      "vo": "Karet ban menua walau jarang dipakai, jadi mengeras, retak halus, cengkeramannya turun.",
+      "voHighlight": [
+        "menua",
+        "mengeras",
+        "retak halus",
+        "cengkeramannya turun"
+      ],
+      "texts": [
+        {
+          "id": "hard",
+          "style": "label",
+          "text": "MENGERAS",
+          "cue": {
+            "word": "mengeras"
+          }
+        },
+        {
+          "id": "crack",
+          "style": "label",
+          "text": "RETAK HALUS",
+          "cue": {
+            "word": "retak"
+          }
+        },
+        {
+          "id": "grip",
+          "style": "label",
+          "text": "CENGKERAMAN TURUN",
+          "accent": true,
+          "cue": {
+            "word": "cengkeramannya"
+          }
+        }
+      ],
+      "marks": []
+    },
+    {
+      "id": "decode",
+      "vo": "Dua angka depan minggunya, dua angka belakang tahunnya. Ban ini buatan dua ribu lima belas. Sebelas tahun!",
+      "voHighlight": [
+        "minggunya",
+        "tahunnya",
+        "dua ribu lima belas",
+        "Sebelas tahun!"
+      ],
+      "texts": [
+        {
+          "id": "week",
+          "style": "digit",
+          "text": "12",
+          "sub": "MINGGU",
+          "anchor": "weekDigits",
+          "cue": {
+            "word": "minggunya"
+          }
+        },
+        {
+          "id": "year",
+          "style": "digit",
+          "text": "15",
+          "sub": "TAHUN",
+          "anchor": "yearDigits",
+          "cue": {
+            "word": "tahunnya"
+          }
+        },
+        {
+          "id": "made",
+          "style": "figure",
+          "text": "2015",
+          "sub": "TAHUN PRODUKSI",
+          "cue": {
+            "word": "ribu"
+          }
+        },
+        {
+          "id": "age",
+          "style": "figure",
+          "text": "11 TAHUN",
+          "sub": "UMUR BAN INI",
+          "accent": true,
+          "cue": {
+            "word": "Sebelas"
+          }
+        }
+      ],
+      "marks": [
+        {
+          "id": "decodeYear",
+          "word": "belakang"
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "vo": "Lewat sepuluh tahun, saatnya ganti. Cek ban mobilmu, dan follow Doktermobil.",
+      "voHighlight": [
+        "sepuluh tahun",
+        "ganti",
+        "follow Doktermobil"
+      ],
+      "texts": [
+        {
+          "id": "rule",
+          "style": "title",
+          "text": "LEWAT 10 TAHUN: GANTI",
+          "accent": true,
+          "cue": {
+            "word": "sepuluh"
+          }
+        },
+        {
+          "id": "ruleNote",
+          "style": "note",
+          "text": "Lewat 5 tahun: cek rutin tiap tahun",
+          "cue": {
+            "word": "ganti"
+          }
+        },
+        {
+          "id": "follow",
+          "style": "handle",
+          "text": "Follow @doktermobil",
+          "cue": {
+            "word": "follow"
+          }
+        }
+      ],
+      "marks": [
+        {
+          "id": "ctaMacro",
+          "word": "Cek"
+        }
+      ]
+    }
+  ]
+}

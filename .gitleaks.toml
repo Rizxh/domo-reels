@@ -1,0 +1,12 @@
+# Default gitleaks rules, skipping dependencies and generated output.
+# Run before every commit: gitleaks detect (or `gitleaks dir .` before git init).
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Dependencies and build output"
+paths = [
+  '''node_modules''',
+  '''(^|/)out/''',
+  '''package-lock\.json''',
+]

@@ -1,0 +1,107 @@
+{
+  "id": "ko-lung-lung",
+  "title": "Tune Up Express Rp499 ribu",
+  "source": "footage/ko-lung-lung.mp4",
+  "cuts": [
+    { "from": 18.93, "to": 31.8 },
+    { "from": 32.4, "to": 41.22 },
+    { "from": 42.38, "to": 48.7 }
+  ],
+  "framing": [
+    { "at": 18.93, "zoom": 1.06 },
+    { "at": 23.89, "zoom": 1.2 },
+    { "at": 29.39, "zoom": 1 },
+    { "at": 32.4, "zoom": 1.12 },
+    { "at": 42.38, "zoom": 1.14 },
+    { "at": 44.92, "zoom": 1.04 }
+  ],
+  "captionHighlight": [
+    "Tune Up Express",
+    "Tune Up",
+    "cepat",
+    "murah meriah",
+    "klik link",
+    "pasti beres"
+  ],
+  "illustrations": [
+    {
+      "kind": "title",
+      "from": 18.93,
+      "to": 21.33,
+      "lines": ["TUNE UP", "EXPRESS"],
+      "highlight": ["EXPRESS"]
+    },
+    {
+      "kind": "price",
+      "from": 21.33,
+      "to": 24.5,
+      "currency": "Rp",
+      "amount": "499",
+      "unit": "RIBU",
+      "caption": "Tune Up Express"
+    },
+    {
+      "kind": "benefits",
+      "from": 26.49,
+      "to": 29.41,
+      "items": [
+        { "icon": "stopwatch", "label": "CEPAT", "at": 27.53 },
+        { "icon": "wallet", "label": "MURAH MERIAH", "at": 28.21 }
+      ]
+    },
+    {
+      "kind": "engine",
+      "from": 29.41,
+      "to": 41.22,
+      "eyebrow": "Tune Up Express",
+      "heading": "Yang dibersihkan",
+      "parts": [
+        {
+          "part": "intake",
+          "label": "Intake",
+          "note": "Jalur udara masuk ke ruang bakar.",
+          "at": 30.75
+        },
+        {
+          "part": "throttle",
+          "label": "Throttle",
+          "note": "Katup yang mengatur banyaknya udara masuk.",
+          "at": 31.24
+        },
+        {
+          "part": "sparkPlug",
+          "label": "Busi",
+          "note": "Pemantik api untuk membakar campuran bensin dan udara.",
+          "at": 32.43
+        },
+        {
+          "part": "piston",
+          "label": "Kepala piston",
+          "note": "Permukaan tempat kerak karbon sisa pembakaran menempel.",
+          "at": 32.99
+        },
+        {
+          "part": "catalytic",
+          "label": "Katalitik",
+          "note": "Penyaring gas buang sebelum keluar knalpot.",
+          "at": 34.35
+        }
+      ],
+      "summaryTitle": "Semua bersih",
+      "summary": "Lima komponen dibersihkan dalam satu paket."
+    },
+    {
+      "kind": "link",
+      "from": 44.92,
+      "to": 46.38,
+      "label": "Klik link di bawah"
+    },
+    {
+      "kind": "endCard",
+      "from": 46.38,
+      "to": 48.7,
+      "tagline": "PASTI BERES",
+      "taglineAt": 47.73
+    }
+  ]
+}

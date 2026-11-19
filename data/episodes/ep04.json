@@ -1,0 +1,232 @@
+{
+  "id": "ep04",
+  "format": "cinema",
+  "world": "engine",
+  "title": "Bensin Boros Cek Mesinnya",
+  "tag": "TIPS HEMAT BBM",
+  "handle": "@doktermobil",
+  "claims": [
+    {
+      "text": "Harga paket Tune Up Express Doktermobil Rp499 ribu (sumber: video talking head Tune Up Express, November 2026). Pastikan masih berlaku dan berlaku di semua cabang.",
+      "reviewed": false
+    },
+    {
+      "text": "Paket Tune Up Express membersihkan intake, throttle, busi, kepala piston, dan katalitik.",
+      "reviewed": false
+    },
+    {
+      "text": "Kerak dan kotoran di intake, throttle, busi, kepala piston, dan katalitik bisa membuat pembakaran kurang sempurna sehingga konsumsi bensin lebih boros.",
+      "reviewed": false
+    },
+    {
+      "text": "Mesin yang bersih membuat bensin lebih awet (tanpa angka persen penghematan).",
+      "reviewed": false
+    },
+    {
+      "text": "CTA \"Booking sekarang\": tujuan booking (link di bio, WhatsApp, atau aplikasi) perlu ditentukan untuk caption.",
+      "reviewed": false
+    }
+  ],
+  "beats": [
+    {
+      "id": "hook",
+      "vo": "Baru isi bensin, jarumnya udah turun lagi?",
+      "voHighlight": [
+        "udah turun lagi?"
+      ],
+      "texts": [
+        {
+          "id": "drop",
+          "style": "title",
+          "text": "BARU ISI, UDAH TURUN?",
+          "cue": {
+            "word": "jarumnya"
+          }
+        }
+      ],
+      "marks": [
+        {
+          "id": "pumpCut",
+          "word": "jarumnya"
+        }
+      ]
+    },
+    {
+      "id": "tension",
+      "vo": "Bisa jadi, bukan mobilnya yang boros, tapi mesinnya yang kotor.",
+      "voHighlight": [
+        "mesinnya yang kotor."
+      ],
+      "texts": [
+        {
+          "id": "notCar",
+          "style": "title",
+          "text": "BUKAN MOBILNYA YANG BOROS",
+          "cue": {
+            "word": "boros"
+          }
+        },
+        {
+          "id": "dirty",
+          "style": "title",
+          "text": "MESINNYA YANG KOTOR",
+          "accent": true,
+          "cue": {
+            "word": "kotor"
+          }
+        }
+      ],
+      "marks": [
+        {
+          "id": "diveIn",
+          "word": "tapi"
+        }
+      ]
+    },
+    {
+      "id": "cause",
+      "vo": "Kerak di intake, throttle, busi, kepala piston, dan katalitik bikin pembakaran nggak sempurna, bensin jadi boros.",
+      "voHighlight": [
+        "intake,",
+        "throttle,",
+        "busi,",
+        "kepala piston,",
+        "katalitik",
+        "nggak sempurna,"
+      ],
+      "texts": [
+        {
+          "id": "pIntake",
+          "style": "callout",
+          "text": "INTAKE",
+          "sub": "1/5",
+          "anchor": "intake",
+          "cue": {
+            "word": "intake"
+          }
+        },
+        {
+          "id": "pThrottle",
+          "style": "callout",
+          "text": "THROTTLE",
+          "sub": "2/5",
+          "anchor": "throttle",
+          "cue": {
+            "word": "throttle"
+          }
+        },
+        {
+          "id": "pPlug",
+          "style": "callout",
+          "text": "BUSI",
+          "sub": "3/5",
+          "anchor": "plug",
+          "cue": {
+            "word": "busi"
+          }
+        },
+        {
+          "id": "pPiston",
+          "style": "callout",
+          "text": "KEPALA PISTON",
+          "sub": "4/5",
+          "anchor": "piston",
+          "cue": {
+            "word": "kepala"
+          }
+        },
+        {
+          "id": "pCat",
+          "style": "callout",
+          "text": "KATALITIK",
+          "sub": "5/5",
+          "anchor": "catalyst",
+          "cue": {
+            "word": "katalitik"
+          }
+        },
+        {
+          "id": "burn",
+          "style": "callout",
+          "text": "PEMBAKARAN NGGAK SEMPURNA",
+          "accent": true,
+          "anchor": "flame",
+          "cue": {
+            "word": "sempurna"
+          }
+        }
+      ],
+      "marks": []
+    },
+    {
+      "id": "solution",
+      "vo": "Tune Up Express Doktermobil bersihin semuanya, cukup empat ratus sembilan puluh sembilan ribu.",
+      "voHighlight": [
+        "Tune Up Express",
+        "bersihin semuanya,",
+        "empat ratus sembilan puluh sembilan ribu."
+      ],
+      "texts": [
+        {
+          "id": "brand",
+          "style": "title",
+          "text": "TUNE UP EXPRESS",
+          "cue": {
+            "word": "Express"
+          }
+        },
+        {
+          "id": "five",
+          "style": "note",
+          "text": "5 bagian dibersihkan sekaligus",
+          "cue": {
+            "word": "semuanya"
+          }
+        },
+        {
+          "id": "price",
+          "style": "figure",
+          "text": "Rp499 RIBU",
+          "sub": "TUNE UP EXPRESS",
+          "accent": true,
+          "cue": {
+            "word": "cukup"
+          }
+        }
+      ],
+      "marks": [
+        {
+          "id": "sweep",
+          "word": "bersihin"
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "vo": "Mesin bersih, bensin lebih awet. Booking sekarang, pasti beres!",
+      "voHighlight": [
+        "Mesin bersih,",
+        "Booking sekarang,"
+      ],
+      "texts": [
+        {
+          "id": "clean",
+          "style": "title",
+          "text": "MESIN BERSIH, BENSIN AWET",
+          "cue": {
+            "word": "awet"
+          }
+        },
+        {
+          "id": "book",
+          "style": "handle",
+          "text": "Booking sekarang",
+          "cue": {
+            "word": "Booking"
+          }
+        }
+      ],
+      "marks": []
+    }
+  ]
+}

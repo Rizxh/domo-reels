@@ -1,0 +1,181 @@
+{
+  "id": "ep07",
+  "format": "cinema",
+  "world": "brake",
+  "title": "Rem Bisa Hilang di Turunan",
+  "tag": "BRAKE FADE",
+  "handle": "@doktermobil",
+  "claims": [
+    {
+      "text": "Brake fade terjadi ketika cakram dan kampas terlalu panas karena pengereman terus menerus; gaya gesek (cengkeraman) menurun sehingga pedal terasa dalam.",
+      "reviewed": false
+    },
+    {
+      "text": "Cakram rem bisa membara (memerah) pada pengereman berat berulang; warna memerah menandakan suhu permukaan yang sangat tinggi.",
+      "reviewed": false
+    },
+    {
+      "text": "Kampas rem yang terlalu panas dapat mengeras/mengkilap (glazing) sehingga gesekannya turun dan tidak lagi menggigit.",
+      "reviewed": false
+    },
+    {
+      "text": "Engine brake (menurunkan gigi) membantu memperlambat tanpa memanaskan rem secara berlebihan pada turunan panjang.",
+      "reviewed": false
+    }
+  ],
+  "beats": [
+    {
+      "id": "hook",
+      "vo": "Turunan panjang, rem bisa hilang justru saat paling dibutuhkan.",
+      "voHighlight": ["hilang", "paling dibutuhkan"],
+      "texts": [
+        {
+          "id": "lost",
+          "style": "title",
+          "text": "REM BISA HILANG",
+          "cue": { "word": "hilang" }
+        },
+        {
+          "id": "when",
+          "style": "title",
+          "text": "SAAT PALING DIBUTUHKAN",
+          "accent": true,
+          "cue": { "word": "dibutuhkan" }
+        }
+      ],
+      "marks": [{ "id": "hookCut", "word": "justru" }]
+    },
+    {
+      "id": "fade",
+      "vo": "Namanya brake fade. Kampas dan cakram kepanasan, cengkeraman turun.",
+      "voHighlight": ["brake fade", "kepanasan", "cengkeraman turun"],
+      "texts": [
+        {
+          "id": "fadeName",
+          "style": "title",
+          "text": "BRAKE FADE",
+          "cue": { "word": "fade" }
+        },
+        {
+          "id": "padHot",
+          "style": "callout",
+          "text": "KAMPAS PANAS",
+          "anchor": "pad",
+          "cue": { "word": "Kampas" }
+        },
+        {
+          "id": "discHot",
+          "style": "callout",
+          "text": "CAKRAM MEMBARA",
+          "anchor": "discFace",
+          "cue": { "word": "cakram" }
+        },
+        {
+          "id": "gripDown",
+          "style": "label",
+          "text": "CENGKERAMAN TURUN",
+          "accent": true,
+          "cue": { "word": "cengkeraman" }
+        }
+      ],
+      "marks": []
+    },
+    {
+      "id": "heat",
+      "vo": "Gesekan terus menerus bikin cakram memerah dan kampas jadi licin.",
+      "voHighlight": ["memerah", "jadi licin"],
+      "texts": [
+        {
+          "id": "red",
+          "style": "callout",
+          "text": "CAKRAM MEMERAH",
+          "anchor": "discFace",
+          "cue": { "word": "memerah" }
+        },
+        {
+          "id": "slick",
+          "style": "callout",
+          "text": "KAMPAS JADI LICIN",
+          "anchor": "pad",
+          "accent": true,
+          "cue": { "word": "licin" }
+        }
+      ],
+      "marks": [{ "id": "heatUp", "word": "Gesekan" }]
+    },
+    {
+      "id": "feel",
+      "vo": "Pedal terasa dalam, mobil tetap melaju, rem tak lagi menggigit.",
+      "voHighlight": ["pedal terasa dalam", "tak lagi menggigit"],
+      "texts": [
+        {
+          "id": "deep",
+          "style": "label",
+          "text": "PEDAL TERASA DALAM",
+          "cue": { "word": "dalam" }
+        },
+        {
+          "id": "roll",
+          "style": "label",
+          "text": "MOBIL TETAP MELAJU",
+          "cue": { "word": "melaju" }
+        },
+        {
+          "id": "bite",
+          "style": "title",
+          "text": "REM TAK LAGI MENGGIGIT",
+          "accent": true,
+          "cue": { "word": "menggigit" }
+        }
+      ],
+      "marks": []
+    },
+    {
+      "id": "fix",
+      "vo": "Pakai engine brake, turunkan gigi, jangan injak rem terus.",
+      "voHighlight": ["engine brake", "turunkan gigi", "jangan injak rem terus"],
+      "texts": [
+        {
+          "id": "engine",
+          "style": "label",
+          "text": "ENGINE BRAKE",
+          "cue": { "word": "engine" }
+        },
+        {
+          "id": "gear",
+          "style": "label",
+          "text": "TURUNKAN GIGI",
+          "cue": { "word": "turunkan" }
+        },
+        {
+          "id": "noBrake",
+          "style": "label",
+          "text": "JANGAN INJAK TERUS",
+          "accent": true,
+          "cue": { "word": "jangan" }
+        }
+      ],
+      "marks": []
+    },
+    {
+      "id": "cta",
+      "vo": "Cek rem di Doktermobil. Cek dulu, baru kerja.",
+      "voHighlight": ["cek rem", "Cek dulu", "Doktermobil"],
+      "texts": [
+        {
+          "id": "check",
+          "style": "title",
+          "text": "CEK REM SEBELUM JALAN",
+          "cue": { "word": "Cek", "nth": 1 }
+        },
+        {
+          "id": "book",
+          "style": "handle",
+          "text": "Booking sekarang",
+          "cue": { "word": "Doktermobil" }
+        }
+      ],
+      "marks": [{ "id": "ctaMacro", "word": "baru" }]
+    }
+  ]
+}

@@ -1,0 +1,401 @@
+{
+  "source": "ko lung lung before.mp4",
+  "model": "large-v3-turbo",
+  "ranges": [
+    {
+      "from": 18.93,
+      "to": 31.8
+    },
+    {
+      "from": 32.4,
+      "to": 41.22
+    },
+    {
+      "from": 42.38,
+      "to": 48.7
+    }
+  ],
+  "words": [
+    {
+      "text": "Sekarang",
+      "start": 18.93,
+      "end": 19.39
+    },
+    {
+      "text": "ada",
+      "start": 19.39,
+      "end": 19.57
+    },
+    {
+      "text": "Tune",
+      "start": 19.57,
+      "end": 19.77
+    },
+    {
+      "text": "Up",
+      "start": 19.77,
+      "end": 19.97
+    },
+    {
+      "text": "Express",
+      "start": 19.97,
+      "end": 20.43
+    },
+    {
+      "text": "dari",
+      "start": 20.43,
+      "end": 20.69
+    },
+    {
+      "text": "Dokter",
+      "start": 20.69,
+      "end": 21.03
+    },
+    {
+      "text": "Mobil",
+      "start": 21.03,
+      "end": 21.33
+    },
+    {
+      "text": "cuma",
+      "start": 21.33,
+      "end": 21.72
+    },
+    {
+      "text": "Rp499",
+      "start": 21.72,
+      "end": 23.3
+    },
+    {
+      "text": "ribu.",
+      "start": 23.3,
+      "end": 24.01
+    },
+    {
+      "text": "Ini",
+      "start": 24.01,
+      "end": 24.24
+    },
+    {
+      "text": "kita",
+      "start": 24.24,
+      "end": 24.54
+    },
+    {
+      "text": "ciptakan",
+      "start": 24.54,
+      "end": 25.13
+    },
+    {
+      "text": "untuk",
+      "start": 25.13,
+      "end": 25.51
+    },
+    {
+      "text": "kamu-kamu",
+      "start": 25.51,
+      "end": 26.23
+    },
+    {
+      "text": "yang",
+      "start": 26.23,
+      "end": 26.49
+    },
+    {
+      "text": "butuh",
+      "start": 26.49,
+      "end": 26.83
+    },
+    {
+      "text": "Tune",
+      "start": 26.83,
+      "end": 26.97
+    },
+    {
+      "text": "Up",
+      "start": 26.97,
+      "end": 27.11
+    },
+    {
+      "text": "secara",
+      "start": 27.11,
+      "end": 27.53
+    },
+    {
+      "text": "cepat",
+      "start": 27.53,
+      "end": 27.89
+    },
+    {
+      "text": "dan",
+      "start": 27.89,
+      "end": 28.21
+    },
+    {
+      "text": "murah",
+      "start": 28.21,
+      "end": 28.74
+    },
+    {
+      "text": "meriah.",
+      "start": 28.74,
+      "end": 29.41
+    },
+    {
+      "text": "Itu",
+      "start": 29.41,
+      "end": 29.59
+    },
+    {
+      "text": "termasuk",
+      "start": 29.59,
+      "end": 30.08
+    },
+    {
+      "text": "pembersihan",
+      "start": 30.08,
+      "end": 30.75
+    },
+    {
+      "text": "intake,",
+      "start": 30.75,
+      "end": 31.24
+    },
+    {
+      "text": "throttle,",
+      "start": 31.24,
+      "end": 31.8
+    },
+    {
+      "text": "busi,",
+      "start": 32.43,
+      "end": 32.99
+    },
+    {
+      "text": "kepala",
+      "start": 32.99,
+      "end": 33.33
+    },
+    {
+      "text": "piston,",
+      "start": 33.33,
+      "end": 33.93
+    },
+    {
+      "text": "dan",
+      "start": 33.93,
+      "end": 34.35
+    },
+    {
+      "text": "katalitik",
+      "start": 34.35,
+      "end": 35
+    },
+    {
+      "text": "tentunya.",
+      "start": 35,
+      "end": 35.46
+    },
+    {
+      "text": "Nah,",
+      "start": 35.46,
+      "end": 36.05
+    },
+    {
+      "text": "Tune",
+      "start": 36.05,
+      "end": 36.32
+    },
+    {
+      "text": "Up",
+      "start": 36.32,
+      "end": 36.59
+    },
+    {
+      "text": "Express",
+      "start": 36.59,
+      "end": 37.04
+    },
+    {
+      "text": "ini",
+      "start": 37.04,
+      "end": 37.29
+    },
+    {
+      "text": "memang",
+      "start": 37.29,
+      "end": 37.54
+    },
+    {
+      "text": "produk",
+      "start": 37.54,
+      "end": 37.78
+    },
+    {
+      "text": "baru",
+      "start": 37.78,
+      "end": 37.94
+    },
+    {
+      "text": "dari",
+      "start": 37.94,
+      "end": 38.1
+    },
+    {
+      "text": "kami.",
+      "start": 38.1,
+      "end": 38.3
+    },
+    {
+      "text": "Kita",
+      "start": 38.3,
+      "end": 38.58
+    },
+    {
+      "text": "ciptakan",
+      "start": 38.58,
+      "end": 38.99
+    },
+    {
+      "text": "untuk",
+      "start": 38.99,
+      "end": 39.28
+    },
+    {
+      "text": "Anda",
+      "start": 39.28,
+      "end": 39.51
+    },
+    {
+      "text": "yang",
+      "start": 39.51,
+      "end": 39.74
+    },
+    {
+      "text": "memiliki",
+      "start": 39.74,
+      "end": 40.19
+    },
+    {
+      "text": "kebutuhan",
+      "start": 40.19,
+      "end": 40.71
+    },
+    {
+      "text": "Express.",
+      "start": 40.71,
+      "end": 41.22
+    },
+    {
+      "text": "Jangan",
+      "start": 42.38,
+      "end": 42.77
+    },
+    {
+      "text": "lupa",
+      "start": 42.77,
+      "end": 43.06
+    },
+    {
+      "text": "cobain",
+      "start": 43.06,
+      "end": 43.42
+    },
+    {
+      "text": "Tune",
+      "start": 43.42,
+      "end": 43.66
+    },
+    {
+      "text": "Up",
+      "start": 43.66,
+      "end": 43.78
+    },
+    {
+      "text": "Express",
+      "start": 43.78,
+      "end": 44.28
+    },
+    {
+      "text": "di",
+      "start": 44.28,
+      "end": 44.36
+    },
+    {
+      "text": "Dokter",
+      "start": 44.36,
+      "end": 44.62
+    },
+    {
+      "text": "Mobil.",
+      "start": 44.62,
+      "end": 44.92
+    },
+    {
+      "text": "Langsung",
+      "start": 44.92,
+      "end": 45.27
+    },
+    {
+      "text": "aja",
+      "start": 45.27,
+      "end": 45.39
+    },
+    {
+      "text": "klik",
+      "start": 45.39,
+      "end": 45.55
+    },
+    {
+      "text": "link",
+      "start": 45.55,
+      "end": 45.8
+    },
+    {
+      "text": "di",
+      "start": 45.8,
+      "end": 45.91
+    },
+    {
+      "text": "bawah",
+      "start": 45.91,
+      "end": 46.19
+    },
+    {
+      "text": "ini.",
+      "start": 46.19,
+      "end": 46.38
+    },
+    {
+      "text": "Karena",
+      "start": 46.38,
+      "end": 46.81
+    },
+    {
+      "text": "di",
+      "start": 46.81,
+      "end": 46.95
+    },
+    {
+      "text": "Dokter",
+      "start": 46.95,
+      "end": 47.37
+    },
+    {
+      "text": "Mobil",
+      "start": 47.37,
+      "end": 47.73
+    },
+    {
+      "text": "pasti",
+      "start": 47.73,
+      "end": 48.1
+    },
+    {
+      "text": "beres.",
+      "start": 48.1,
+      "end": 48.48
+    }
+  ],
+  "note": "Hand-corrected after whisper: Tune Up spelling, split the price, sentence punctuation for caption pages."
+}

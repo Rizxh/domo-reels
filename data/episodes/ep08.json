@@ -1,0 +1,787 @@
+{
+  "id": "ep08",
+  "format": "soft",
+  "world": "jalan",
+  "title": "Airbag Lebih Cepat dari Kedipan Mata",
+  "handle": "@doktermobil",
+  "brandName": "DOKTERMOBIL",
+  "tagline": "Rawat mobil, jaga yang di dalamnya.",
+  "music": "audio/bgm/soft-drive.wav",
+  "narration": {
+    "model": "eleven_multilingual_v2",
+    "speed": 1.2,
+    "stability": 0.3,
+    "exaggeration": 0.5
+  },
+  "claims": [
+    {
+      "text": "Sensor airbag mengukur tingkat keparahan tabrakan sejak tabrakan dimulai; bila cukup parah, sensor memicu inflator yang mengisi kantong dengan gas. Sumber: IIHS, Airbags (iihs.org/topics/airbags).",
+      "reviewed": false
+    },
+    {
+      "text": "Airbag samping umumnya mengembang dalam 10-20 milidetik pertama tabrakan samping; airbag depan mengembang dalam sepersekian detik. Sumber: IIHS, Airbags.",
+      "reviewed": false
+    },
+    {
+      "text": "Satu kedipan mata berlangsung sekitar 100-400 milidetik. Sumber: BioNumbers (Harvard), durasi kedipan mata.",
+      "reviewed": false
+    },
+    {
+      "text": "NHTSA memperkirakan airbag depan telah menyelamatkan 70.059 nyawa di AS sampai 2019. Sumber: IIHS mengutip NHTSA.",
+      "reviewed": false
+    },
+    {
+      "text": "Airbag + sabuk pengaman (lap & shoulder) menurunkan risiko kematian pada tabrakan depan 61%, dibanding 50% sabuk saja dan 34% airbag saja. Sumber: IIHS mengutip NHTSA.",
+      "reviewed": false
+    },
+    {
+      "text": "Pengemudi sebaiknya menjaga dada minimal 10 inci (sekitar 25 cm) dari tengah setir; anak kecil duduk di kursi belakang. Sumber: IIHS, Airbags.",
+      "reviewed": false
+    }
+  ],
+  "scenes": [
+    {
+      "shot": "ab-hook",
+      "seconds": 5.18,
+      "lyric": "LEBIH CEPAT DARI KEDIP?",
+      "sfx": [
+        {
+          "sound": "slam",
+          "at": 0.45
+        },
+        {
+          "sound": "whoosh",
+          "at": 0.7
+        }
+      ],
+      "vo": {
+        "text": "Saat mobil tabrakan, airbag mengembang lebih cepat dari kedipan matamu. Kok bisa secepat itu?",
+        "src": "audio/ep08/s01.mp3",
+        "words": [
+          {
+            "w": "Saat",
+            "t": 0
+          },
+          {
+            "w": "mobil",
+            "t": 0.221
+          },
+          {
+            "w": "tabrakan,",
+            "t": 0.418
+          },
+          {
+            "w": "airbag",
+            "t": 0.836
+          },
+          {
+            "w": "mengembang",
+            "t": 1.277
+          },
+          {
+            "w": "lebih",
+            "t": 1.741
+          },
+          {
+            "w": "cepat",
+            "t": 1.939
+          },
+          {
+            "w": "dari",
+            "t": 2.229
+          },
+          {
+            "w": "kedipan",
+            "t": 2.519
+          },
+          {
+            "w": "matamu.",
+            "t": 2.844
+          },
+          {
+            "w": "Kok",
+            "t": 3.297
+          },
+          {
+            "w": "bisa",
+            "t": 3.425
+          },
+          {
+            "w": "secepat",
+            "t": 3.843
+          },
+          {
+            "w": "itu?",
+            "t": 4.528
+          }
+        ],
+        "seconds": 4.83
+      }
+    },
+    {
+      "shot": "ab-sensor",
+      "seconds": 4.21,
+      "lyric": "SENSOR BEREAKSI",
+      "sfx": [
+        {
+          "sound": "tick",
+          "at": 0.4
+        }
+      ],
+      "vo": {
+        "text": "Begitu tabrakan dimulai, sensor langsung mengukur seberapa keras benturannya.",
+        "src": "audio/ep08/s02.mp3",
+        "words": [
+          {
+            "w": "Begitu",
+            "t": 0
+          },
+          {
+            "w": "tabrakan",
+            "t": 0.313
+          },
+          {
+            "w": "dimulai,",
+            "t": 0.731
+          },
+          {
+            "w": "sensor",
+            "t": 1.231
+          },
+          {
+            "w": "langsung",
+            "t": 1.765
+          },
+          {
+            "w": "mengukur",
+            "t": 2.078
+          },
+          {
+            "w": "seberapa",
+            "t": 2.543
+          },
+          {
+            "w": "keras",
+            "t": 2.891
+          },
+          {
+            "w": "benturannya.",
+            "t": 3.193
+          }
+        ],
+        "seconds": 3.86
+      }
+    },
+    {
+      "shot": "ab-gas",
+      "seconds": 8.62,
+      "lyric": "10-20 MILIDETIK",
+      "sfx": [
+        {
+          "sound": "ignite",
+          "at": 0.3
+        },
+        {
+          "sound": "hiss",
+          "at": 0.36
+        }
+      ],
+      "vo": {
+        "text": "Kalau cukup keras, sensor memicu inflator yang mengisi kantong dengan gas. Menurut IIHS, airbag samping mengembang dalam sepuluh sampai dua puluh milidetik pertama.",
+        "src": "audio/ep08/s03.mp3",
+        "words": [
+          {
+            "w": "Kalau",
+            "t": 0
+          },
+          {
+            "w": "cukup",
+            "t": 0.232
+          },
+          {
+            "w": "keras,",
+            "t": 0.43
+          },
+          {
+            "w": "sensor",
+            "t": 0.708
+          },
+          {
+            "w": "memicu",
+            "t": 1.126
+          },
+          {
+            "w": "inflator",
+            "t": 1.521
+          },
+          {
+            "w": "yang",
+            "t": 1.916
+          },
+          {
+            "w": "mengisi",
+            "t": 2.078
+          },
+          {
+            "w": "kantong",
+            "t": 2.647
+          },
+          {
+            "w": "dengan",
+            "t": 3.03
+          },
+          {
+            "w": "gas.",
+            "t": 3.309
+          },
+          {
+            "w": "Menurut",
+            "t": 3.576
+          },
+          {
+            "w": "IIHS,",
+            "t": 3.924
+          },
+          {
+            "w": "airbag",
+            "t": 4.725
+          },
+          {
+            "w": "samping",
+            "t": 5.178
+          },
+          {
+            "w": "mengembang",
+            "t": 5.492
+          },
+          {
+            "w": "dalam",
+            "t": 5.968
+          },
+          {
+            "w": "sepuluh",
+            "t": 6.177
+          },
+          {
+            "w": "sampai",
+            "t": 6.502
+          },
+          {
+            "w": "dua",
+            "t": 6.734
+          },
+          {
+            "w": "puluh",
+            "t": 6.931
+          },
+          {
+            "w": "milidetik",
+            "t": 7.187
+          },
+          {
+            "w": "pertama.",
+            "t": 7.558
+          }
+        ],
+        "seconds": 8.27
+      }
+    },
+    {
+      "shot": "ab-blink",
+      "seconds": 5.18,
+      "lyric": "KEDIP: 100-400 MS",
+      "sfx": [
+        {
+          "sound": "pop",
+          "at": 0.5
+        }
+      ],
+      "vo": {
+        "text": "Sebagai perbandingan, satu kedipan mata butuh sekitar seratus sampai empat ratus milidetik.",
+        "src": "audio/ep08/s04.mp3",
+        "words": [
+          {
+            "w": "Sebagai",
+            "t": 0
+          },
+          {
+            "w": "perbandingan,",
+            "t": 0.43
+          },
+          {
+            "w": "satu",
+            "t": 1.045
+          },
+          {
+            "w": "kedipan",
+            "t": 1.382
+          },
+          {
+            "w": "mata",
+            "t": 1.683
+          },
+          {
+            "w": "butuh",
+            "t": 1.927
+          },
+          {
+            "w": "sekitar",
+            "t": 2.194
+          },
+          {
+            "w": "seratus",
+            "t": 2.554
+          },
+          {
+            "w": "sampai",
+            "t": 3.309
+          },
+          {
+            "w": "empat",
+            "t": 3.599
+          },
+          {
+            "w": "ratus",
+            "t": 3.936
+          },
+          {
+            "w": "milidetik.",
+            "t": 4.214
+          }
+        ],
+        "seconds": 4.83
+      }
+    },
+    {
+      "shot": "ab-lives",
+      "seconds": 8.34,
+      "lyric": "70.059 NYAWA",
+      "sfx": [
+        {
+          "sound": "bell",
+          "at": 0.8
+        }
+      ],
+      "vo": {
+        "text": "Hasilnya nyata. Menurut data NHTSA, airbag depan sudah menyelamatkan tujuh puluh ribu lima puluh sembilan nyawa di Amerika sampai tahun dua ribu sembilan belas.",
+        "src": "audio/ep08/s05.mp3",
+        "words": [
+          {
+            "w": "Hasilnya",
+            "t": 0
+          },
+          {
+            "w": "nyata.",
+            "t": 0.592
+          },
+          {
+            "w": "Menurut",
+            "t": 0.882
+          },
+          {
+            "w": "data",
+            "t": 1.138
+          },
+          {
+            "w": "NHTSA,",
+            "t": 1.335
+          },
+          {
+            "w": "airbag",
+            "t": 1.962
+          },
+          {
+            "w": "depan",
+            "t": 2.194
+          },
+          {
+            "w": "sudah",
+            "t": 2.368
+          },
+          {
+            "w": "menyelamatkan",
+            "t": 2.531
+          },
+          {
+            "w": "tujuh",
+            "t": 3.007
+          },
+          {
+            "w": "puluh",
+            "t": 3.553
+          },
+          {
+            "w": "ribu",
+            "t": 3.994
+          },
+          {
+            "w": "lima",
+            "t": 4.342
+          },
+          {
+            "w": "puluh",
+            "t": 4.586
+          },
+          {
+            "w": "sembilan",
+            "t": 4.772
+          },
+          {
+            "w": "nyawa",
+            "t": 5.178
+          },
+          {
+            "w": "di",
+            "t": 5.55
+          },
+          {
+            "w": "Amerika",
+            "t": 5.654
+          },
+          {
+            "w": "sampai",
+            "t": 6.177
+          },
+          {
+            "w": "tahun",
+            "t": 6.444
+          },
+          {
+            "w": "dua",
+            "t": 6.676
+          },
+          {
+            "w": "ribu",
+            "t": 7.001
+          },
+          {
+            "w": "sembilan",
+            "t": 7.233
+          },
+          {
+            "w": "belas.",
+            "t": 7.593
+          }
+        ],
+        "seconds": 7.99
+      }
+    },
+    {
+      "shot": "ab-belt",
+      "seconds": 10.29,
+      "lyric": "+ SABUK = 61%",
+      "sfx": [
+        {
+          "sound": "tick",
+          "at": 0.5
+        }
+      ],
+      "vo": {
+        "text": "Tapi airbag bukan pengganti sabuk. Airbag ditambah sabuk pengaman menurunkan risiko kematian sampai enam puluh satu persen, jauh di atas airbag saja yang cuma tiga puluh empat persen.",
+        "src": "audio/ep08/s06.mp3",
+        "words": [
+          {
+            "w": "Tapi",
+            "t": 0
+          },
+          {
+            "w": "airbag",
+            "t": 0.267
+          },
+          {
+            "w": "bukan",
+            "t": 0.58
+          },
+          {
+            "w": "pengganti",
+            "t": 0.801
+          },
+          {
+            "w": "sabuk.",
+            "t": 1.068
+          },
+          {
+            "w": "Airbag",
+            "t": 1.405
+          },
+          {
+            "w": "ditambah",
+            "t": 1.788
+          },
+          {
+            "w": "sabuk",
+            "t": 2.31
+          },
+          {
+            "w": "pengaman",
+            "t": 2.717
+          },
+          {
+            "w": "menurunkan",
+            "t": 3.135
+          },
+          {
+            "w": "risiko",
+            "t": 3.611
+          },
+          {
+            "w": "kematian",
+            "t": 4.203
+          },
+          {
+            "w": "sampai",
+            "t": 5.097
+          },
+          {
+            "w": "enam",
+            "t": 5.422
+          },
+          {
+            "w": "puluh",
+            "t": 5.759
+          },
+          {
+            "w": "satu",
+            "t": 6.026
+          },
+          {
+            "w": "persen,",
+            "t": 6.258
+          },
+          {
+            "w": "jauh",
+            "t": 7.012
+          },
+          {
+            "w": "di",
+            "t": 7.384
+          },
+          {
+            "w": "atas",
+            "t": 7.465
+          },
+          {
+            "w": "airbag",
+            "t": 7.639
+          },
+          {
+            "w": "saja",
+            "t": 7.895
+          },
+          {
+            "w": "yang",
+            "t": 8.173
+          },
+          {
+            "w": "cuma",
+            "t": 8.348
+          },
+          {
+            "w": "tiga",
+            "t": 8.638
+          },
+          {
+            "w": "puluh",
+            "t": 8.986
+          },
+          {
+            "w": "empat",
+            "t": 9.195
+          },
+          {
+            "w": "persen.",
+            "t": 9.485
+          }
+        ],
+        "seconds": 9.94
+      }
+    },
+    {
+      "shot": "ab-distance",
+      "seconds": 6.67,
+      "lyric": "JARAK MINIMAL 25 CM",
+      "sfx": [
+        {
+          "sound": "pop",
+          "at": 0.6
+        }
+      ],
+      "vo": {
+        "text": "Satu lagi: jaga dada minimal dua puluh lima sentimeter dari tengah setir, dan anak kecil duduk di kursi belakang.",
+        "src": "audio/ep08/s07.mp3",
+        "words": [
+          {
+            "w": "Satu",
+            "t": 0
+          },
+          {
+            "w": "lagi:",
+            "t": 0.209
+          },
+          {
+            "w": "jaga",
+            "t": 0.488
+          },
+          {
+            "w": "dada",
+            "t": 0.824
+          },
+          {
+            "w": "minimal",
+            "t": 1.115
+          },
+          {
+            "w": "dua",
+            "t": 1.451
+          },
+          {
+            "w": "puluh",
+            "t": 1.683
+          },
+          {
+            "w": "lima",
+            "t": 1.939
+          },
+          {
+            "w": "sentimeter",
+            "t": 2.276
+          },
+          {
+            "w": "dari",
+            "t": 2.81
+          },
+          {
+            "w": "tengah",
+            "t": 2.972
+          },
+          {
+            "w": "setir,",
+            "t": 3.17
+          },
+          {
+            "w": "dan",
+            "t": 3.796
+          },
+          {
+            "w": "anak",
+            "t": 4.005
+          },
+          {
+            "w": "kecil",
+            "t": 4.284
+          },
+          {
+            "w": "duduk",
+            "t": 4.69
+          },
+          {
+            "w": "di",
+            "t": 5.027
+          },
+          {
+            "w": "kursi",
+            "t": 5.178
+          },
+          {
+            "w": "belakang.",
+            "t": 5.677
+          }
+        ],
+        "seconds": 6.32
+      }
+    },
+    {
+      "shot": "outro",
+      "seconds": 5.18,
+      "outro": true,
+      "sfx": [
+        {
+          "sound": "bell",
+          "at": 0.05
+        }
+      ],
+      "vo": {
+        "text": "Share ke temanmu yang suka nyetir tanpa sabuk. Follow Doktermobil untuk info otomotif lainnya!",
+        "src": "audio/ep08/s08.mp3",
+        "words": [
+          {
+            "w": "Share",
+            "t": 0
+          },
+          {
+            "w": "ke",
+            "t": 0.267
+          },
+          {
+            "w": "temanmu",
+            "t": 0.348
+          },
+          {
+            "w": "yang",
+            "t": 0.662
+          },
+          {
+            "w": "suka",
+            "t": 0.801
+          },
+          {
+            "w": "nyetir",
+            "t": 0.987
+          },
+          {
+            "w": "tanpa",
+            "t": 1.3
+          },
+          {
+            "w": "sabuk.",
+            "t": 1.625
+          },
+          {
+            "w": "Follow",
+            "t": 2.043
+          },
+          {
+            "w": "Doktermobil",
+            "t": 2.276
+          },
+          {
+            "w": "untuk",
+            "t": 2.775
+          },
+          {
+            "w": "info",
+            "t": 3.007
+          },
+          {
+            "w": "otomotif",
+            "t": 3.379
+          },
+          {
+            "w": "lainnya!",
+            "t": 3.947
+          }
+        ],
+        "seconds": 4.83
+      }
+    }
+  ],
+  "thumb": {
+    "scene": 3,
+    "at": 0.85,
+    "title": "AIRBAG SECEPAT APA?",
+    "highlight": "APA?",
+    "hook": "Lebih cepat dari kedipan",
+    "offset": 380
+  },
+  "post": {
+    "caption": "Airbag mengembang lebih cepat dari kedipan matamu. Kok bisa?\n\nDi video ini: cara kerja airbag dari sensor sampai gas, berapa nyawa yang sudah diselamatkan, dan kenapa sabuk pengaman tetap wajib.\n\nShare ke temanmu yang suka nyetir tanpa sabuk. Follow @doktermobil untuk info otomotif lainnya!\n\nSumber: IIHS (mengutip NHTSA), iihs.org/topics/airbags; BioNumbers (Harvard).",
+    "hashtags": [
+      "doktermobil",
+      "faktaotomotif",
+      "airbag",
+      "safetydriving",
+      "sabukpengaman",
+      "otomotif"
+    ]
+  }
+}

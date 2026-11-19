@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Doktermobil EP02 3D</title>
+<style>
+html,body{margin:0;height:100%;background:#000;overflow:hidden}
+#stage{position:fixed;inset:0;margin:auto;height:100vh;aspect-ratio:9/16;max-width:100vw}
+body.render #stage{width:100vw;height:100vh;aspect-ratio:auto}
+canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+#glOut{display:none}
+body.render #glOut{display:block}
+body.render #gl{visibility:hidden}
+</style>
+</head>
+<body>
+<!-- 3D picture only. Text, callouts and captions are drawn by Remotion
+     (src/compositions/Explainer3D.tsx) on top of this page. -->
+<div id="stage">
+  <canvas id="gl" aria-label="Animasi 3D mesin mobil"></canvas>
+  <canvas id="glOut" aria-hidden="true"></canvas>
+</div>
+<script src="three.min.js"></script>
+<script src="GLTFLoader.js"></script>
+<script src="RGBELoader.js"></script>
+<script src="postfx.js"></script>
+<script src="kit.js"></script>
+<script src="kit-sets.js"></script>
+<script src="engine-unit.js"></script>
+<script>
+(() => {
+'use strict';
+// ================= cue times =================
+// Seconds on the final timeline, sent by Remotion through configure(); every
+// camera move and engine event below is placed relative to these. The table
+// here only approximates the EP02 voice over so the page can be opened on
+// its own for look development.
+let A = {
+  hook: { start: 0, count: 1.58 },
+  reveal: { start: 5.07, title: 5.76 },
+  cycle: { start: 7.59, steps: [9.52, 10.19, 11.07, 11.88], spark: 14.1 },
+  impact: { start: 16.52, causes: [17.51, 19.09], weaken: 20.81, effects: [21.55, 22.5] },
+  cta: { start: 23.74, save: 23.87, follow: 25.19 },
+  end: 27.76,
+};
+const FPS = 30;
+
+// ================= curves =================
+// Monotone cubic interpolation (Fritsch-Carlson): passes through every key
+// with continuous speed and never overshoots, so moves have no kinks.
+function pchip(xs, ys) {
+  const n = xs.length, h = [], d = [], m = new Array(n);
+  for (let i = 0; i < n - 1; i++) { h[i] = xs[i + 1] - xs[i]; d[i] = (ys[i + 1] - ys[i]) / h[i]; }
+  m[0] = d[0]; m[n - 1] = d[n - 2];
+  for (let i = 1; i < n - 1; i++) {
+    m[i] = d[i - 1] * d[i] <= 0 ? 0 : 3 * (h[i - 1] + h[i]) / ((2 * h[i] + h[i - 1]) / d[i - 1] + (h[i] + 2 * h[i - 1]) / d[i]);
+  }
+  return (x) => {
+    if (x <= xs[0]) return ys[0];
+    if (x >= xs[n - 1]) return ys[n - 1];
+    let i = 0; while (x > xs[i + 1]) i++;
+    const t = (x - xs[i]) / h[i], t2 = t * t, t3 = t2 * t;
+    return (2 * t3 - 3 * t2 + 1) * ys[i] + (t3 - 2 * t2 + t) * h[i] * m[i] + (-2 * t3 + 3 * t2) * ys[i + 1] + (t3 - t2) * h[i] * m[i + 1];
+  };
+}
+// Camera path through keys [t, [px,py,pz], [lx,ly,lz], fov, [sx,sy]]. Keys
+// that hold the same value produce a true rest (zero speed) at that key.
+// sx, sy slide the finished picture right and down, as a share of the frame,
+// to keep the subject clear of the text column (top left) and the captions.
+function camPath(keys) {
+  const ts = keys.map(k => k[0]), shift = k => k[4] || [0, 0];
+  const ch = [0, 1, 2].map(i => pchip(ts, keys.map(k => k[1][i])))
+    .concat([0, 1, 2].map(i => pchip(ts, keys.map(k => k[2][i]))), [pchip(ts, keys.map(k => k[3]))],
+      [0, 1].map(i => pchip(ts, keys.map(k => shift(k)[i]))));
+  return (t) => ch.map(f => f(t));
+}
+
+// ================= SET: tol (car on the motorway, engine inside it) =================
+const tol = new THREE.Group(); scene.add(tol);
+const world = new THREE.Group(); tol.add(world);
+const ENGINE = { x: 1.72, y: .55, s: .13 };
+const engine = makeEngine({ lightRange: 4 * ENGINE.s, scale: ENGINE.s });
+engine.g.position.set(ENGINE.x, ENGINE.y, 0); engine.g.scale.setScalar(ENGINE.s); tol.add(engine.g);
+// World x of the centre of cylinder 1 (the hero cylinder).
+const C1 = ENGINE.x + (-1.5 * GEO.spacing) * ENGINE.s;
+const SPEED = 22; // m/s, about 80 km/h
+const ROAD_LEN = 360, DASH_GAP = 12, POLE_GAP = 40;
+const scrollers = [];
+{
+  world.add(photoDome());
+  world.add(flat(M(new THREE.PlaneGeometry(ROAD_LEN, 240), textured(SURF.grass, .95, 0, .03), false, true)));
+  world.add(at(flat(M(new THREE.PlaneGeometry(ROAD_LEN, 11), phSurface('asphalt_02', 120, 3.6), false, true)), 0, .01, 0));
+  const paint = std(0xf4f1e8, .55);
+  [-5.1, 5.1].forEach(z => world.add(at(flat(M(new THREE.PlaneGeometry(ROAD_LEN, .16), paint, false, true)), 0, .02, z)));
+  for (let i = 0; i < ROAD_LEN / DASH_GAP; i++) { const d = at(flat(M(new THREE.PlaneGeometry(4, .14), paint, false, true)), 0, .02, 1.8); world.add(d); scrollers.push({ o: d, gap: DASH_GAP, i }); }
+  // Concrete barrier on the far side, steel guard rail on the near side.
+  const concrete = phSurface('concrete_floor_02', 180, .5);
+  world.add(at(rbox(ROAD_LEN, .8, .45, .08, concrete, true, true), 0, .4, 6.2));
+  const railM = std(0xb9bec4, .35, .85);
+  world.add(at(rbox(ROAD_LEN, .28, .05, .02, railM, true, true), 0, .62, -6.1));
+  for (let i = 0; i < ROAD_LEN / 4; i++) { const p = at(rbox(.1, .7, .1, .02, railM, true, true), 0, .35, -6.16); world.add(p); scrollers.push({ o: p, gap: 4, i }); }
+  for (let i = 0; i < ROAD_LEN / POLE_GAP; i++) {
+    const pole = new THREE.Group(); pole.position.z = 7.4;
+    pole.add(at(cyl(.09, .12, 9, railM, 'y', 12), 0, 4.5, 0)); pole.add(at(rbox(.12, .1, 2.6, .03, railM), 0, 8.9, -1.2)); pole.add(at(rbox(.3, .08, .7, .03, std(0xe9edf0, .3)), 0, 8.82, -2.3));
+    world.add(pole); scrollers.push({ o: pole, gap: POLE_GAP, i });
+    const tr = tree(0, 13 + hash(i) * 6, 1.3 + hash(i + 9) * .5); world.add(tr); scrollers.push({ o: tr, gap: POLE_GAP, i, shift: 17 });
+  }
+}
+const car = makeCar(0x8a0b12); tol.add(car); car.userData.driver.visible = true;
+const sun = new THREE.DirectionalLight(0xffdcae, 2.7); sun.position.set(9, 7, -6); sun.castShadow = true;
+sun.shadow.mapSize.set(4096, 4096); Object.assign(sun.shadow.camera, { left: -9, right: 9, top: 7, bottom: -5, near: 1, far: 40 }); sun.shadow.bias = -.0005; sun.shadow.normalBias = .02;
+const skyFill = new THREE.HemisphereLight(0xbfdcff, 0x5a4a38, .32);
+world.add(sun, sun.target, skyFill);
+// Engine lighting for the dark "inside" look: cool key, blue rim.
+const engKey = new THREE.DirectionalLight(0xdfe9ff, 1.1); engKey.position.set(ENGINE.x - .6, 1.8, -1.6); engKey.target.position.set(ENGINE.x, .75, 0);
+const engRim = new THREE.PointLight(0x5fb4ff, 1.4, 1.6, 1.4); engRim.position.set(ENGINE.x + .5, 1.05, .45);
+tol.add(engKey, engKey.target, engRim);
+// Two looks of the same set: the engine alone in the dark ("X-ray"), or the
+// car on the road. Moving between them is a dissolve of two finished
+// pictures (see layersAt), never see-through materials, which sort badly.
+function setWorld(on) {
+  world.visible = car.visible = on; engine.g.visible = !on;
+  engKey.visible = engRim.visible = !on;
+}
+
+// ================= SET: compare (clean vs worn cylinder) =================
+// Clean on screen right, worn on screen left (the camera looks along +z).
+const CMP_Y = -40;
+const compare = new THREE.Group(); compare.position.y = CMP_Y; scene.add(compare);
+const cmpUnits = [makeUnit({ seed: 11 }), makeUnit({ dirty: true, power: .42, seed: 12 })];
+cmpUnits.forEach((u, i) => { u.g.position.x = (i - .5) * 1.2; compare.add(u.g); });
+{
+  compare.add(at(flat(M(new THREE.CircleGeometry(5, 96), textured(SURF.epoxy, .3, .3, .004, { envMapIntensity: .3 }), false, true)), 0, -.72, 0));
+  const key = new THREE.DirectionalLight(0xffffff, 1.1); key.position.set(-3, 7, -5); key.target.position.set(0, 1.4, 0); key.castShadow = true; key.shadow.mapSize.set(2048, 2048);
+  Object.assign(key.shadow.camera, { left: -4, right: 4, top: 5, bottom: -2 }); key.shadow.bias = -.0005;
+  const rim = new THREE.PointLight(0x5fb4ff, 1.3, 10); rim.position.set(2.6, 3.2, 2.6);
+  compare.add(key, key.target, rim, new THREE.HemisphereLight(0xffffff, 0x1c1c20, .28));
+}
+
+// ================= looks =================
+phEnv(SKY_ID, env => { ENV.outdoor = env; });
+phEnv('autoshop_01', env => { ENV.shop = env; });
+const BLACK = new THREE.Color(0x040405);
+const DARK_BG = gradient('#0c0c0e', '#1b1b1f');
+const SETS = { tol, compare, dash, workshop };
+// bloom: [strength, radius, threshold].
+const LOOK = {
+  tol:      { bg: BLACK,   fog: new THREE.Fog(0xa9afbd, 60, 175), env: () => ENV.outdoor, grade: 'contrast(1.08) saturate(1.2)',  bloom: [.45, .5, .92] },
+  compare:  { bg: DARK_BG, fog: null,                             env: () => ENV.shop,    grade: 'contrast(1.1) saturate(1.18)',  bloom: [.6, .5, .9] },
+  dash:     { bg: BLACK,   fog: new THREE.Fog(0xa9afbd, 50, 175), env: () => ENV.outdoor, grade: 'contrast(1.06) saturate(1.15)', bloom: [.1, .4, .95] },
+  workshop: { bg: DARK_BG, fog: new THREE.Fog(0x0f0f11, 12, 30),  env: () => ENV.shop,    grade: 'contrast(1.08) saturate(1.12)', bloom: [.28, .5, .9] },
+};
+// Outdoors the sky is bright everywhere, so the glow is turned almost off.
+const OUTDOOR_BLOOM = [.1, .4, .95];
+camera.near = .02; camera.far = 420; camera.updateProjectionMatrix();
+
+// ================= choreography (rebuilt whenever the cue times change) =================
+let SHOTS = [], XFADES = [], phase = () => 0, cmpPhase = () => 0, worldFade = () => 0;
+// Length of the dissolve between the dashboard and the comparison, seconds.
+const XFADE_SECONDS = .4;
+const look = new THREE.Vector3();
+function build() {
+  const c = A, steps = c.cycle.steps, stroke = (steps[3] - steps[0]) / 3;
+  // Crank phase of cylinder 1, in strokes. It ignites on frame 0, again on
+  // the hook's count word, runs fast for the reveal, then slows so each
+  // stroke starts exactly on its spoken name.
+  const fast = 6 + 8 * (c.reveal.start - c.hook.count);
+  const atCycle = Math.ceil((fast + 9 * (c.cycle.start - c.reveal.start)) / 4) * 4;
+  const done = steps[3] + stroke;
+  phase = pchip(
+    [0, 1, c.hook.count, c.reveal.start, c.cycle.start, steps[0], steps[1], steps[2], steps[3], done, c.impact.start],
+    [2.04, 3, 6, fast, atCycle, atCycle + 8, atCycle + 9, atCycle + 10, atCycle + 11, atCycle + 12, atCycle + 12 + 5 * (c.impact.start - done)]);
+  // Comparison pair: a few slow cycles, igniting exactly on the "weaken" word.
+  const fire = 2 + 4 * Math.max(1, Math.round((c.impact.weaken - c.impact.start) * 2.2 / 4));
+  cmpPhase = pchip([c.impact.start, c.impact.weaken, c.cta.start], [.5, fire, fire + 2.4 * (c.cta.start - c.impact.weaken)]);
+  // The car, road and sky dissolve in while the camera pulls out of the
+  // engine, and out again when it dives back in.
+  worldFade = (t) => smooth01(t, c.reveal.start - .2, c.reveal.start + .45) * (1 - smooth01(t, c.cycle.start + .25, c.cycle.start + .85));
+
+  const dashCut = c.impact.effects[0] - .2, cy = CMP_Y;
+  SHOTS = [
+    { id: 'engine', set: 'tol', from: 0, to: c.impact.start, cam: camPath([
+      [0,                     [C1 + .03, .875, -.36],  [C1, .86, 0],        40, [.1, .1]],
+      [c.hook.count - .35,    [C1 + .02, .872, -.27],  [C1, .86, 0],        40, [.1, .1]],
+      [c.hook.count + .55,    [C1 + .1, .9, -.5],      [C1 + .05, .8, 0],   40, [.08, .12]],
+      [c.reveal.start,        [2.55, 1.25, -1.2],      [1.68, .72, 0],      40, [0, .12]],
+      [c.reveal.title + .45,  [8.6, 1.9, -4],          [.2, .8, 0],         40, [0, .06]],
+      [c.cycle.start,         [9, 1.85, -4.3],         [.2, .8, 0],         40, [0, .06]],
+      [c.cycle.start + 1,     [2.5, 1.2, -1.25],       [1.68, .72, 0],      40, [0, .12]],
+      [steps[0] - .15,        [C1 + .1, .8, -.7],      [C1, .75, 0],        40, [.16, .06]],
+      [done,                  [C1 + .34, .82, -.6],    [C1, .76, 0],        40, [.16, .06]],
+      [c.cycle.spark,         [1.95, .95, -.95],       [1.72, .76, 0],      40, [0, .12]],
+      [c.impact.start,        [2.2, .98, -1.02],       [1.78, .76, 0],      40, [0, .12]],
+    ]) },
+    // Looking down about 20 degrees so the piston crowns show, whole units
+    // from crank to camshafts, with a slow push in.
+    { id: 'compare', set: 'compare', from: c.impact.start, to: dashCut, drift: true, anchors: ['wornPlug', 'carbon'], cam: camPath([
+      [c.impact.start,      [0, cy + 4.2, -7.3], [0, cy + 1.55, 0], 40, [0, .16]],
+      [dashCut + XFADE_SECONDS, [0, cy + 4, -6.5], [0, cy + 1.6, 0], 40, [0, .16]],
+    ]) },
+    // Speedometer first ("heavy to pull"), then across to the fuel gauge.
+    { id: 'dash', set: 'dash', from: dashCut, to: c.cta.start, drift: true, cam: camPath([
+      [dashCut - XFADE_SECONDS,  [.36, 1.2, 1.62],   [.36, 1.03, .47],  40, [0, .1]],
+      [c.impact.effects[1] - .2, [.35, 1.2, 1.5],    [.35, 1.03, .47],  40, [0, .1]],
+      [c.impact.effects[1] + .4, [-.36, 1.2, 1.5],   [-.36, 1.03, .47], 40, [0, .1]],
+      [c.cta.start,              [-.36, 1.2, 1.44],  [-.36, 1.03, .47], 40, [0, .1]],
+    ]) },
+    { id: 'cta', set: 'workshop', from: c.cta.start, to: c.end, drift: true, cam: camPath([
+      // The mechanic stands right of centre; logo, buttons and captions sit left.
+      [c.cta.start,       [.9, 2.05, 7.6], [0, 1.5, .2],   45, [.14, 0]],
+      [c.cta.follow + .6, [.1, 1.8, 4.7],  [0, 1.95, 1.2], 45, [.2, 0]],
+      [c.end,             [.1, 1.8, 4.6],  [0, 1.95, 1.2], 45, [.2, 0]],
+    ]) },
+  ];
+  const [compareShot, dashShot] = [SHOTS[1], SHOTS[2]];
+  XFADES = [{ a: compareShot, b: dashShot, from: dashCut - XFADE_SECONDS / 2, to: dashCut + XFADE_SECONDS / 2 }];
+}
+function shotAt(t) { for (const s of SHOTS) if (t >= s.from && t < s.to) return s; return SHOTS[SHOTS.length - 1]; }
+
+function applyLook(set, bloomOverride) {
+  for (const k in SETS) SETS[k].visible = k === set;
+  const L = LOOK[set]; scene.background = L.bg; scene.fog = L.fog; scene.environment = L.env();
+  const b = bloomOverride || L.bloom; bloom.strength = b[0]; bloom.radius = b[1]; bloom.threshold = b[2];
+  return L.grade;
+}
+function setCamera(px, py, pz, lx, ly, lz, fov, sx, sy) {
+  camera.position.set(px, py, pz); look.set(lx, ly, lz); camera.lookAt(look);
+  camera.fov = fov;
+  // setViewOffset also refreshes the projection matrix.
+  const W = 1000 * camera.aspect, H = 1000; camera.setViewOffset(W, H, -(sx || 0) * W, -(sy || 0) * H, W, H);
+  scene.traverseVisible(o => { if (o.userData.followCamera) o.position.copy(camera.position); });
+}
+function poseTol(t, phi, on) {
+  engine.update(phi); setWorld(on);
+  const dist = SPEED * t;
+  scrollers.forEach(s => { const span = ROAD_LEN; s.o.position.x = ((((s.i * s.gap + (s.shift || 0) - dist) % span) + span) % span) - span / 2; });
+  const u = car.userData; u.body.position.y = Math.sin(t * 9) * .004; u.body.rotation.x = Math.sin(t * 6.3) * .0012;
+  u.spinners.forEach(s => { s.rotation.z = -dist / .36; });
+}
+function poseDash(p, travel) {
+  // The car loses pace: the speedometer sags and the fuel needle drops.
+  needles.speed.rotation.z = A0 + (A1 - A0) * lerp(82, 54, sine(clamp(p * 1.6))) / SPEEDO_MAX;
+  needles.fuel.rotation.z = lerp(A1 - .05, A0 - .3, sine(p));
+  roadDashes.forEach((d, i) => { d.position.z = ((-i * 6 + travel) % 84 + 84) % 84 - 82; });
+  roadsideTrees.forEach((tr, i) => { tr.position.z = ((-i * 8 + travel) % 80 + 80) % 80 - 78; });
+}
+function poseWorkshop(t, lt, wave, thumbs, liftK) {
+  resetPose(mech);
+  lift.position.y = .95 * liftK;
+  mech.g.position.y = Math.sin(t * 2.2) * .008;
+  const arm = mech.arms[1];
+  arm.sh.rotation.x = lerp(-2.55 * wave, -.15, thumbs); arm.sh.rotation.z = lerp(0, 1.05, thumbs);
+  arm.el.rotation.x = wave * (-.35 + Math.sin(lt * 12) * .4); arm.el.rotation.z = lerp(0, 1.65, thumbs);
+  mech.thumb.visible = thumbs > .6;
+  mech.head.rotation.y = .1 * wave; mech.arms[0].sh.rotation.x = .12;
+}
+
+// Slow, smooth "operator" drift added to locked-off cameras so the frame is
+// never dead still. Low frequencies only: anything faster reads as jitter.
+const DRIFT = .012;
+const drift = (t) => [Math.sin(t * .61 + .4) + .5 * Math.sin(t * 1.13 + 2.1), Math.sin(t * .47 + 1.3) + .4 * Math.sin(t * .97), 0].map(v => v * DRIFT);
+
+// Poses every set, light and the camera for time t (seconds), as shot `sh`
+// and, on the motorway set, with or without the outside world. Pure function
+// of its arguments and the cue table.
+function poseShot(t, sh, worldOn) {
+  const c = A;
+  let bloomOverride = null;
+  if (sh.set === 'tol') { poseTol(t, phase(t), worldOn); if (worldOn) bloomOverride = OUTDOOR_BLOOM; }
+  else setWorld(true);
+  if (sh.set === 'compare') { const phi = cmpPhase(t); cmpUnits.forEach(u => u.update(phi)); }
+  if (sh.set === 'dash') {
+    const p = clamp((t - sh.from) / (sh.to - sh.from));
+    poseDash(p, (t - sh.from) * 9 * (1 - .45 * sine(p)));
+  }
+  if (sh.set === 'workshop') {
+    // Wave on the "save" word, thumbs up on the "follow" word.
+    const wave = sine(seg(t, c.cta.save, c.cta.save + .4)) * (1 - sine(seg(t, c.cta.follow - .35, c.cta.follow)));
+    const thumbs = sine(seg(t, c.cta.follow - .1, c.cta.follow + .35));
+    poseWorkshop(t, t - sh.from, wave, thumbs, inOut(seg(t - sh.from, 0, 1.6)));
+    mech.head.rotation.z = Math.sin(seg(t, c.cta.follow + .3, c.cta.follow + .9) * Math.PI) * .18;
+  }
+  const grade = applyLook(sh.set, bloomOverride);
+  const cam = sh.cam(t);
+  if (sh.drift) { const d = drift(t); for (let i = 0; i < 3; i++) { cam[i] += d[i]; cam[3 + i] += d[i] * .5; } }
+  setCamera(...cam);
+  return grade;
+}
+// The pictures that make up time t, each with the weight it is laid over
+// the ones before it: one picture, or two during a dissolve.
+function layersAt(t) {
+  const x = xfadeAt(t);
+  if (x) return [{ sh: x.a, world: true, k: 1 }, { sh: x.b, world: true, k: smooth01(t, x.from, x.to) }];
+  const sh = shotAt(t);
+  if (sh.set !== 'tol') return [{ sh, world: true, k: 1 }];
+  const k = worldFade(t);
+  if (k <= .001 || k >= .999) return [{ sh, world: k > .5, k: 1 }];
+  return [{ sh, world: false, k: 1 }, { sh, world: true, k }];
+}
+// Screen points Remotion draws callouts to, keyed by the cause they show.
+const ANCHORS = {
+  wornPlug: () => cmpUnits[1].g.localToWorld(cmpUnits[1].points.plug()),
+  carbon: () => cmpUnits[1].g.localToWorld(cmpUnits[1].points.crown()),
+};
+// Where each anchor of the shot on screen at time t lands, as [x, y] shares
+// of the frame (0,0 top left). Poses the scene for t as a side effect.
+function anchorsAt(time) {
+  time = clamp(time, 0, A.end - 1e-4);
+  const ls = layersAt(time), L = ls.length > 1 && ls[1].k > .5 ? ls[1] : ls[0], out = {};
+  if (!L.sh.anchors) return out;
+  poseShot(time, L.sh, L.world); scene.updateMatrixWorld(true); camera.updateMatrixWorld(true);
+  L.sh.anchors.forEach(name => { const v = ANCHORS[name]().project(camera); out[name] = [(v.x + 1) / 2, (1 - v.y) / 2]; });
+  return out;
+}
+// ================= sound cues =================
+// Moments Remotion places sound effects on, in seconds, read off the same
+// curves that drive the picture so every sound lands on its frame.
+// Combustions are only voiced while the engine runs in slow motion (a real
+// engine fires far too often to hear single bangs) and the camera is inside.
+const SLOW_STROKES_PER_SECOND = 6, SOUND_SCAN_STEP = 1 / 480;
+// Relative loudness of a cylinder that is not the hero, and of the worn unit.
+const SIDE_CYLINDER_GAIN = .45, WORN_GAIN = .55;
+function crossings(f, from, to, at) {
+  // Times in [from, to) where f(t) passes at (mod 4) going up.
+  const out = [];
+  let prev = f(from);
+  for (let t = from + SOUND_SCAN_STEP; t < to; t += SOUND_SCAN_STEP) {
+    const v = f(t), k = Math.floor((v - at) / 4);
+    if (k > Math.floor((prev - at) / 4)) out.push(t - SOUND_SCAN_STEP * ((v - at - 4 * k) / (v - prev)));
+    prev = v;
+  }
+  return out;
+}
+function soundCues() {
+  const c = A, ignite = [], whoosh = [];
+  const rate = (t) => (phase(t + SOUND_SCAN_STEP) - phase(t)) / SOUND_SCAN_STEP;
+  // Share of a stroke after ignition during which frame 0 still counts as
+  // the moment of the bang (the film opens on a cylinder already firing).
+  const OPENING_WINDOW = .25;
+  FIRING_OFFSET.forEach((off, i) => {
+    const ph0 = (((phase(0) + off) % 4) + 4) % 4;
+    if (ph0 >= 2 && ph0 < 2 + OPENING_WINDOW) ignite.push({ t: 0, gain: i === 0 ? 1 : SIDE_CYLINDER_GAIN });
+    crossings(t => phase(t) + off, 0, c.impact.start, 2).forEach(t => {
+      if (rate(t) < SLOW_STROKES_PER_SECOND && worldFade(t) < .5) ignite.push({ t, gain: i === 0 ? 1 : SIDE_CYLINDER_GAIN });
+    });
+  });
+  // The comparison pair fires together; the worn unit adds a weaker bang.
+  const cmp = SHOTS[1];
+  crossings(cmpPhase, cmp.from, cmp.to, 2).forEach(t => { ignite.push({ t, gain: 1 }); ignite.push({ t, gain: WORN_GAIN }); });
+  // Whooshes peak where the camera breaks out of and back into the engine,
+  // and softly on the dissolve to the dashboard.
+  crossings(t => 4 * worldFade(t), 0, c.impact.start, 2).forEach(t => whoosh.push({ t, gain: 1 }));
+  crossings(t => -4 * worldFade(t), 0, c.impact.start, -2).forEach(t => whoosh.push({ t, gain: 1 }));
+  XFADES.forEach(x => whoosh.push({ t: (x.from + x.to) / 2, gain: .5 }));
+  ignite.sort((a, b) => a.t - b.t); whoosh.sort((a, b) => a.t - b.t);
+  return { ignite, whoosh };
+}
+function xfadeAt(t) { for (const x of XFADES) if (t >= x.from && t < x.to) return x; return null; }
+// Motion blur samples are only averaged inside one continuous piece of film.
+const pieceAt = (t) => xfadeAt(t) || shotAt(t);
+
+// ================= asset sheet (look development) =================
+// Fixed views of every set and asset, one per frame, rendered through the
+// same pipeline as the film: `npm run lookdev -- ep02`.
+// Keep the count in sync with EXPLAINER_LOOKDEV_VIEWS in src/lib/previz.ts.
+const cmp = (x, y, z) => [x, CMP_Y + y, z];
+const tolVoid = (phi) => () => poseTol(0, phi, false);
+const tolDay = () => poseTol(1.3, 2.3, true);
+const cmpAt = (phi) => () => cmpUnits.forEach(u => u.update(phi));
+const LOOKDEV = [
+  { set: 'compare', pose: cmpAt(2.22), cam: [cmp(-.6, 2.6, -6.4), cmp(-.6, 1.5, 0), 40] },              // clean unit, firing
+  { set: 'compare', pose: cmpAt(2.22), cam: [cmp(.6, 2.6, -6.4), cmp(.6, 1.5, 0), 40] },                // worn unit, firing
+  { set: 'compare', pose: cmpAt(1.99), cam: [cmp(-.52, DECK + .5, -1.1), cmp(-.6, DECK + .2, 0), 40] }, // clean plug tip, spark
+  { set: 'compare', pose: cmpAt(1.99), cam: [cmp(.68, DECK + .5, -1.1), cmp(.6, DECK + .2, 0), 40] },   // worn plug tip, spark
+  { set: 'compare', pose: cmpAt(1), cam: [cmp(-.6, DECK + 1.5, -1.5), cmp(-.6, 1.5, 0), 40] },          // clean crown from above
+  { set: 'compare', pose: cmpAt(1), cam: [cmp(.6, DECK + 1.5, -1.5), cmp(.6, 1.5, 0), 40] },            // worn crown from above
+  { set: 'compare', pose: cmpAt(.5), cam: [cmp(-.2, DECK + .9, -1.9), cmp(-.6, DECK + .5, 0), 40] },    // valve train, intake open
+  { set: 'compare', pose: cmpAt(2.5), cam: [cmp(-1.9, .7, -2.3), cmp(-.6, .45, 0), 40] },               // crank and rod
+  { set: 'tol', pose: tolVoid(2.2), cam: [[2.75, 1.3, -1.25], [1.7, .72, 0], 40] },                     // whole engine, three-quarter
+  { set: 'tol', pose: tolVoid(5.2), cam: [[1.72, .82, -1.5], [1.72, .74, 0], 40] },                     // whole engine, side
+  { set: 'tol', pose: tolDay, cam: [[8.6, 1.9, -4], [.2, .8, 0], 40] },                                 // car on the road
+  { set: 'tol', pose: tolDay, cam: [[.2, 1.3, -9.5], [.2, .9, 0], 40] },                                // car, side
+  { set: 'dash', pose: () => poseDash(.2, 3), cam: [[.36, 1.24, 1.8], [.36, 1, .47], 40] },             // speedometer
+  { set: 'dash', pose: () => poseDash(.8, 9), cam: [[-.36, 1.24, 1.72], [-.36, 1, .47], 40] },          // fuel gauge
+  { set: 'workshop', pose: () => poseWorkshop(0, 0, 0, 0, 1), cam: [[.9, 2.05, 7.6], [0, 1.5, .2], 45] },  // workshop wide
+  { set: 'workshop', pose: () => poseWorkshop(0, 0, 0, 1, 1), cam: [[.1, 1.8, 4.2], [0, 1.6, 1.3], 45] },  // mechanic, thumbs up
+];
+function poseLookdev(i) {
+  const v = LOOKDEV[clamp(i, 0, LOOKDEV.length - 1)];
+  if (v.set !== 'tol') setWorld(true);
+  v.pose();
+  const grade = applyLook(v.set, v.set === 'tol' && world.visible ? OUTDOOR_BLOOM : null);
+  setCamera(...v.cam[0], ...v.cam[1], v.cam[2], 0, 0);
+  return grade;
+}
+
+// ================= rendering =================
+// The scene is rendered through a bloom pass. Render mode draws each output
+// frame as the average of several moments inside a 180 degree shutter
+// (motion blur) on a supersampled canvas. Sub-frames never cross a cut.
+const hdr = renderer.capabilities.isWebGL2 && !!renderer.extensions.get('EXT_color_buffer_float');
+const composer = new THREE.EffectComposer(renderer, hdr
+  ? new THREE.WebGLMultisampleRenderTarget(4, 4, { format: THREE.RGBAFormat, type: THREE.HalfFloatType })
+  : new THREE.WebGLRenderTarget(4, 4, { format: THREE.RGBAFormat }));
+composer.addPass(new THREE.RenderPass(scene, camera));
+const bloom = new THREE.UnrealBloomPass(new THREE.Vector2(4, 4), .5, .5, .9); composer.addPass(bloom);
+composer.addPass(new THREE.ShaderPass(THREE.GammaCorrectionShader));
+
+let renderMode = false, lookdev = false, t = 0, playing = true, last = performance.now();
+// Each moment is graded and dissolved on this canvas, then averaged into
+// the output canvas for motion blur.
+const mixCanvas = document.createElement('canvas'), mixCtx = mixCanvas.getContext('2d');
+function drawMoment(ts) {
+  layersAt(ts).forEach((L) => {
+    const grade = poseShot(ts, L.sh, L.world); composer.render();
+    mixCtx.globalAlpha = L.k; mixCtx.filter = grade; mixCtx.drawImage(canvas, 0, 0);
+  });
+  mixCtx.filter = 'none';
+}
+function renderAt(time) {
+  if (lookdev) { const grade = poseLookdev(Math.round(time * FPS)); composer.render(); outCtx.globalAlpha = 1; outCtx.drawImage(canvas, 0, 0); outCanvas.style.filter = grade; return; }
+  const end = A.end - 1e-4; time = clamp(time, 0, end);
+  if (!renderMode) {
+    // Live preview: the strongest layer only.
+    const ls = layersAt(time), L = ls.length > 1 && ls[1].k > .5 ? ls[1] : ls[0];
+    canvas.style.filter = poseShot(time, L.sh, L.world); composer.render(); return;
+  }
+  const center = pieceAt(time);
+  outCanvas.style.filter = 'none';
+  let n = 0;
+  for (let i = 0; i < QUALITY.samples; i++) {
+    const ts = clamp(time + (QUALITY.samples === 1 ? 0 : (i / (QUALITY.samples - 1) - .5) * QUALITY.shutter / FPS), 0, end);
+    if (pieceAt(ts) !== center) continue;
+    drawMoment(ts);
+    outCtx.globalAlpha = 1 / (n + 1); outCtx.drawImage(mixCanvas, 0, 0); n++;
+  }
+}
+function resize() { const r = stage.getBoundingClientRect(); if (!r.width) return;
+  renderer.setSize(r.width, r.height, false); composer.setPixelRatio(renderer.getPixelRatio()); composer.setSize(r.width, r.height);
+  outCanvas.width = mixCanvas.width = canvas.width; outCanvas.height = mixCanvas.height = canvas.height;
+  camera.aspect = r.width / r.height; camera.updateProjectionMatrix(); renderAt(t); }
+new ResizeObserver(resize).observe(stage);
+build();
+const ready = Promise.all([document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve(), Promise.all(ASSET_LOADS)]).then(() => { TEX_REDRAW.forEach(f => f()); renderAt(t); });
+// Standalone preview: loops in real time until Remotion takes over.
+function loop(now) { const dt = Math.min(.1, (now - last) / 1000); last = now;
+  if (playing && !renderMode) { t += dt; if (t >= A.end) t = 0; renderAt(t); }
+  requestAnimationFrame(loop); }
+resize(); requestAnimationFrame(loop);
+window.__previz = { FPS, ready, lookdevViews: LOOKDEV.length,
+  renderAt(x) { t = x; renderAt(x); },
+  anchorsAt,
+  // { ignite: [{ t, gain }], whoosh: [{ t, gain }] } for the current cues.
+  soundCues,
+  // cues: the table at the top of this file, in seconds.
+  // quality: optional { pixelRatio, samples } override (draft renders).
+  // lookdev: true renders the asset sheet views instead of the film.
+  configure(cfg) {
+    lookdev = !!cfg.lookdev;
+    if (cfg.cues && JSON.stringify(cfg.cues) !== JSON.stringify(A)) { A = cfg.cues; build(); }
+    const q = cfg.quality;
+    if (q && (q.pixelRatio !== QUALITY.pixelRatio || q.samples !== QUALITY.samples)) { Object.assign(QUALITY, q); if (renderMode) { renderer.setPixelRatio(QUALITY.pixelRatio); resize(); } }
+  },
+  enterRender() { renderMode = true; playing = false; document.body.classList.add('render'); renderer.setPixelRatio(QUALITY.pixelRatio); resize(); },
+  pause() { playing = false; } };
+})();
+</script>
+</body>
+</html>

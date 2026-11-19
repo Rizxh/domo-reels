@@ -1,0 +1,87 @@
+{
+  "id": "ep02",
+  "series": "jarang-diketahui",
+  "title": "100 Ledakan per Detik",
+  "engine": { "cylinders": 4, "rpm": 3000 },
+  "claims": [
+    {
+      "text": "Mesin 4 silinder di sekitar 3.000 rpm membakar campuran bensin dan udara sekitar 100 kali per detik (25 kali per silinder).",
+      "reviewed": false
+    },
+    {
+      "text": "Sekitar 3.000 rpm adalah putaran mesin yang wajar saat melaju di tol.",
+      "reviewed": false
+    },
+    {
+      "text": "Kata \"ledakan\" dipakai sebagai bahasa awam untuk pembakaran terkendali di ruang bakar.",
+      "reviewed": false
+    },
+    {
+      "text": "Urutan langkah mesin empat langkah: isap, kompresi, usaha, buang. Urutan pengapian yang ditampilkan: 1-3-4-2.",
+      "reviewed": false
+    },
+    {
+      "text": "Busi aus dan kerak karbon di ruang bakar melemahkan pembakaran, membuat tarikan berat dan bensin boros.",
+      "reviewed": false
+    }
+  ],
+  "scenes": [
+    {
+      "type": "hook",
+      "vo": "Ledakan ini terjadi seratus kali per detik, tepat di depan kakimu.",
+      "voHighlight": ["seratus kali per detik"],
+      "count": {
+        "value": 100,
+        "suffix": "×",
+        "unit": "PER DETIK",
+        "cueWord": "seratus"
+      }
+    },
+    {
+      "type": "reveal",
+      "vo": "Itu mesin mobilmu saat melaju di tol.",
+      "voHighlight": ["mesin mobilmu"],
+      "title": { "text": "MESIN MOBILMU", "cueWord": "mesin" },
+      "note": "±3.000 rpm, 4 silinder"
+    },
+    {
+      "type": "cycle",
+      "vo": "Empat silinder bergantian: isap, kompresi, usaha, buang. Tiap busi memercik dua puluh lima kali per detik.",
+      "voHighlight": ["isap", "kompresi", "usaha", "buang", "dua puluh lima kali"],
+      "steps": [
+        { "stroke": "intake", "label": "ISAP", "cueWord": "isap" },
+        { "stroke": "compression", "label": "KOMPRESI", "cueWord": "kompresi" },
+        { "stroke": "power", "label": "USAHA", "cueWord": "usaha" },
+        { "stroke": "exhaust", "label": "BUANG", "cueWord": "buang" }
+      ],
+      "spark": {
+        "value": 25,
+        "suffix": "×",
+        "unit": "PER DETIK",
+        "cueWord": "dua"
+      }
+    },
+    {
+      "type": "impact",
+      "vo": "Kalau busi aus atau ruang bakar berkerak, ledakannya melemah. Tarikan berat, bensin boros.",
+      "voHighlight": ["melemah", "berat", "boros"],
+      "causes": [
+        { "kind": "wornPlug", "label": "BUSI AUS", "cueWord": "aus" },
+        { "kind": "carbon", "label": "KERAK KARBON", "cueWord": "berkerak" }
+      ],
+      "weakenCueWord": "melemah",
+      "effects": [
+        { "kind": "power", "label": "TARIKAN BERAT", "cueWord": "Tarikan" },
+        { "kind": "fuel", "label": "BENSIN BOROS", "cueWord": "bensin" }
+      ]
+    },
+    {
+      "type": "cta",
+      "vo": "Simpan video ini, dan follow Doktermobil.",
+      "voHighlight": ["Simpan", "follow Doktermobil"],
+      "handle": "@doktermobil",
+      "saveCueWord": "Simpan",
+      "followCueWord": "follow"
+    }
+  ]
+}

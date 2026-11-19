@@ -1,0 +1,23 @@
+node_modules
+dist
+.DS_Store
+
+# Secrets: keep .env.example tracked, never the real files.
+.env
+.env.*
+!.env.example
+
+# Raw client footage (large, personal): never commit.
+data/episodes/*.mp4
+data/episodes/*.mov
+
+# Rendered videos.
+out/
+
+# Generated voice over per episode (regenerate with `npm run tts -- <id>`).
+public/audio/ep*/
+.whisper/
+public/footage/
+# CC0 Poly Haven downloads (npm run assets)
+public/assets/polyhaven/*
+!public/assets/polyhaven/LICENSES.md

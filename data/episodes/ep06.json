@@ -1,0 +1,21 @@
+{
+  "id": "ep06", "format": "cinema", "world": "engine", "title": "Check Engine? Cek Dulu", "tag": "JANGAN ASAL GANTI PART", "handle": "@doktermobil",
+  "claims": [
+    { "text": "Contoh biaya dan pekerjaan perlu disesuaikan dengan hasil pemeriksaan setiap mobil.", "reviewed": false },
+    { "text": "Proses pemeriksaan dan estimasi transparan Doktermobil perlu dikonfirmasi tim bisnis sebelum publikasi.", "reviewed": false }
+  ],
+  "beats": [
+    { "id": "hook", "vo": "Lampu check engine nyala? Langsung ganti part bukan jawabannya.", "voHighlight": ["check engine", "bukan jawabannya"], "texts": [{ "id": "drop", "style": "title", "text": "JANGAN ASAL GANTI PART", "cue": { "word": "ganti" } }], "marks": [{ "id": "pumpCut", "word": "engine" }] },
+    { "id": "tension", "vo": "Karena salah diagnosis bikin tagihan membengkak, padahal masalahnya belum ketemu.", "voHighlight": ["tagihan membengkak", "belum ketemu"], "texts": [{ "id": "notCar", "style": "title", "text": "KENAPA TAGIHAN BENGKAK?", "cue": { "word": "diagnosis" } }, { "id": "dirty", "style": "title", "text": "MASALAH BELUM KETEMU", "accent": true, "cue": { "word": "belum" } }], "marks": [{ "id": "diveIn", "word": "padahal" }] },
+    { "id": "cause", "vo": "Ini penyebabnya: intake berkerak, throttle kotor, busi berjelaga, piston hitam, sampai katalitik tertutup deposit.", "voHighlight": ["intake berkerak", "throttle kotor", "busi berjelaga", "piston hitam", "katalitik tertutup deposit"], "texts": [
+      { "id": "pIntake", "style": "callout", "text": "INTAKE BERKERAK", "sub": "01/05", "anchor": "intake", "cue": { "word": "intake" } },
+      { "id": "pThrottle", "style": "callout", "text": "THROTTLE KOTOR", "sub": "02/05", "anchor": "throttle", "cue": { "word": "throttle" } },
+      { "id": "pPlug", "style": "callout", "text": "BUSI BERJELAGA", "sub": "03/05", "anchor": "plug", "cue": { "word": "busi" } },
+      { "id": "pPiston", "style": "callout", "text": "PISTON HITAM", "sub": "04/05", "anchor": "piston", "cue": { "word": "piston" } },
+      { "id": "pCat", "style": "callout", "text": "KATALITIK TERTUTUP", "sub": "05/05", "anchor": "catalyst", "cue": { "word": "katalitik" } },
+      { "id": "burn", "style": "callout", "text": "SUMBER MASALAH TERLIHAT", "accent": true, "anchor": "flame", "cue": { "word": "deposit" } }
+    ], "marks": [] },
+    { "id": "solution", "vo": "Setelah sumbernya jelas, kerak dibersihkan satu per satu. Baru kami kasih estimasi yang transparan.", "voHighlight": ["kerak dibersihkan", "satu per satu", "estimasi yang transparan"], "texts": [{ "id": "brand", "style": "title", "text": "BERSIHKAN SAMPAI TUNTAS", "cue": { "word": "dibersihkan" } }, { "id": "five", "style": "note", "text": "Kerak hilang • Mesin kembali bersih", "cue": { "word": "satu" } }, { "id": "price", "style": "figure", "text": "ESTIMASI JELAS", "sub": "SETELAH DIAGNOSIS", "accent": true, "cue": { "word": "estimasi" } }], "marks": [{ "id": "sweep", "word": "kerak" }] },
+    { "id": "cta", "vo": "Jadi jangan servis dulu. Cek dulu, pahami masalahnya, baru kerja di Doktermobil.", "voHighlight": ["jangan servis dulu", "cek dulu", "baru kerja"], "texts": [{ "id": "clean", "style": "title", "text": "CEK DULU. BARU KERJA.", "cue": { "word": "baru" } }, { "id": "book", "style": "handle", "text": "Booking pemeriksaan", "cue": { "word": "Doktermobil" } }], "marks": [] }
+  ]
+}

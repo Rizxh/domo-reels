@@ -1,0 +1,404 @@
+{
+  "id": "ep05",
+  "format": "paper",
+  "world": "story",
+  "title": "Masuk Sehat, Keluar Rusak",
+  "tag": "JANGAN KETIPU BENGKEL",
+  "handle": "@doktermobil",
+  "claims": [
+    {
+      "text": "Modus oknum bengkel (menawarkan servis tambahan yang tidak perlu, pengerjaan asal, kerusakan setelah servis) adalah ilustrasi umum; video tidak menyebut bengkel tertentu.",
+      "reviewed": false
+    },
+    {
+      "text": "Doktermobil memeriksa mobil dulu dengan alat scan modern di semua titik penting (dikonfirmasi user 2026-11-17).",
+      "reviewed": true
+    },
+    {
+      "text": "Hasil pemeriksaan ditulis di form estimasi dan disetujui pelanggan sebelum dikerjakan (dikonfirmasi user 2026-11-17).",
+      "reviewed": true
+    },
+    {
+      "text": "Titik inspeksi yang ditampilkan (ban, rem, aki, oli, AC, kaki-kaki) mewakili \"semua titik penting\"; daftar lengkap mengikuti SOP Doktermobil.",
+      "reviewed": false
+    },
+    {
+      "text": "Temuan pemeriksaan dijelaskan langsung ke pelanggan, termasuk mana yang perlu dan mana yang belum perlu dikerjakan (bagian dari proses yang dikonfirmasi user 2026-11-17). Contoh temuan (ganti oli perlu; busi dan filter udara belum) hanya ilustrasi.",
+      "reviewed": false
+    }
+  ],
+  "beats": [
+    {
+      "id": "hook",
+      "vo": "Masuk bengkel cuma servis ringan, keluarnya malah rusak.",
+      "voHighlight": [
+        "servis ringan,",
+        "malah rusak."
+      ],
+      "texts": [
+        {
+          "id": "lightService",
+          "style": "label",
+          "text": "SERVIS RINGAN",
+          "cue": {
+            "word": "servis"
+          }
+        },
+        {
+          "id": "hookTitle",
+          "style": "title",
+          "text": "MASUK SEHAT, KELUAR RUSAK?",
+          "accent": true,
+          "cue": {
+            "word": "keluarnya"
+          }
+        }
+      ],
+      "marks": [
+        {
+          "id": "smokeCut",
+          "word": "keluarnya"
+        }
+      ]
+    },
+    {
+      "id": "oknum",
+      "vo": "Ini modus oknum bengkel nakal.",
+      "voHighlight": [
+        "oknum bengkel nakal."
+      ],
+      "texts": [
+        {
+          "id": "modus",
+          "style": "label",
+          "text": "MODUS OKNUM",
+          "accent": true,
+          "cue": {
+            "word": "modus"
+          }
+        }
+      ],
+      "marks": []
+    },
+    {
+      "id": "upsell",
+      "vo": "Kap dibuka, lalu ditawari servis tambahan: sekalian ini, sekalian itu.",
+      "voHighlight": [
+        "servis tambahan:",
+        "sekalian ini, sekalian itu."
+      ],
+      "texts": [
+        {
+          "id": "up1",
+          "style": "label",
+          "text": "SEKALIAN GANTI FILTER",
+          "cue": {
+            "word": "tambahan:"
+          }
+        },
+        {
+          "id": "up2",
+          "style": "label",
+          "text": "SEKALIAN FLUSHING",
+          "cue": {
+            "word": "sekalian",
+            "nth": 1
+          }
+        },
+        {
+          "id": "up3",
+          "style": "label",
+          "text": "SEKALIAN GANTI BUSI",
+          "cue": {
+            "word": "sekalian",
+            "nth": 2
+          }
+        }
+      ],
+      "marks": [
+        {
+          "id": "hoodOpen",
+          "word": "Kap"
+        },
+        {
+          "id": "offer",
+          "word": "ditawari"
+        }
+      ]
+    },
+    {
+      "id": "damage",
+      "vo": "Dikerjakan asal-asalan, selang lepas, lampu mesin menyala, tagihan ikut bengkak.",
+      "voHighlight": [
+        "asal-asalan,",
+        "selang lepas,",
+        "lampu mesin menyala,",
+        "tagihan ikut bengkak."
+      ],
+      "texts": [],
+      "marks": [
+        {
+          "id": "hose",
+          "word": "selang"
+        },
+        {
+          "id": "checkLight",
+          "word": "lampu"
+        },
+        {
+          "id": "billSwell",
+          "word": "tagihan"
+        }
+      ]
+    },
+    {
+      "id": "regret",
+      "vo": "Mobil makin parah, uang habis, waktu juga terbuang.",
+      "voHighlight": [
+        "makin parah,",
+        "uang habis,",
+        "waktu juga terbuang."
+      ],
+      "texts": [],
+      "marks": [
+        {
+          "id": "worse",
+          "word": "parah,"
+        },
+        {
+          "id": "money",
+          "word": "uang"
+        },
+        {
+          "id": "time",
+          "word": "waktu"
+        }
+      ]
+    },
+    {
+      "id": "turn",
+      "vo": "Padahal, servis yang benar itu dimulai dari pengecekan.",
+      "voHighlight": [
+        "dimulai dari pengecekan."
+      ],
+      "texts": [],
+      "marks": [
+        {
+          "id": "arrive2",
+          "word": "dimulai"
+        }
+      ]
+    },
+    {
+      "id": "domoScan",
+      "vo": "Di Doktermobil, mobil dicek dulu pakai alat scan modern di semua titik penting.",
+      "voHighlight": [
+        "Doktermobil,",
+        "alat scan modern",
+        "semua titik penting."
+      ],
+      "texts": [
+        {
+          "id": "pt1",
+          "style": "note",
+          "text": "Ban",
+          "cue": {
+            "word": "semua"
+          }
+        },
+        {
+          "id": "pt2",
+          "style": "note",
+          "text": "Rem",
+          "cue": {
+            "word": "titik"
+          }
+        },
+        {
+          "id": "pt3",
+          "style": "note",
+          "text": "Aki",
+          "cue": {
+            "word": "titik"
+          }
+        },
+        {
+          "id": "pt4",
+          "style": "note",
+          "text": "Oli",
+          "cue": {
+            "word": "penting."
+          }
+        },
+        {
+          "id": "pt5",
+          "style": "note",
+          "text": "AC",
+          "cue": {
+            "word": "penting."
+          }
+        },
+        {
+          "id": "pt6",
+          "style": "note",
+          "text": "Kaki-kaki",
+          "cue": {
+            "word": "penting."
+          }
+        }
+      ],
+      "marks": [
+        {
+          "id": "scan",
+          "word": "scan"
+        }
+      ]
+    },
+    {
+      "id": "explain",
+      "vo": "Temuannya dijelaskan langsung: mana yang perlu, mana yang belum.",
+      "voHighlight": [
+        "dijelaskan langsung:",
+        "mana yang perlu,",
+        "mana yang belum."
+      ],
+      "texts": [
+        {
+          "id": "needHead",
+          "style": "label",
+          "text": "PERLU",
+          "accent": true,
+          "cue": {
+            "word": "perlu,"
+          }
+        },
+        {
+          "id": "need1",
+          "style": "note",
+          "text": "Ganti oli",
+          "cue": {
+            "word": "perlu,"
+          }
+        },
+        {
+          "id": "skipHead",
+          "style": "label",
+          "text": "BELUM PERLU",
+          "cue": {
+            "word": "belum."
+          }
+        },
+        {
+          "id": "skip1",
+          "style": "note",
+          "text": "Busi",
+          "cue": {
+            "word": "belum."
+          }
+        },
+        {
+          "id": "skip2",
+          "style": "note",
+          "text": "Filter udara",
+          "cue": {
+            "word": "belum."
+          }
+        }
+      ],
+      "marks": [
+        {
+          "id": "talk",
+          "word": "dijelaskan"
+        }
+      ]
+    },
+    {
+      "id": "domoForm",
+      "vo": "Hasilnya ditulis di form estimasi. Kamu setuju dulu, baru dikerjakan.",
+      "voHighlight": [
+        "form estimasi.",
+        "setuju dulu,"
+      ],
+      "texts": [
+        {
+          "id": "formTitle",
+          "style": "title",
+          "text": "FORM ESTIMASI",
+          "cue": {
+            "word": "form"
+          }
+        },
+        {
+          "id": "f1",
+          "style": "note",
+          "text": "Hasil scan & pengecekan",
+          "cue": {
+            "word": "estimasi."
+          }
+        },
+        {
+          "id": "f2",
+          "style": "note",
+          "text": "Bagian yang perlu dikerjakan",
+          "cue": {
+            "word": "estimasi."
+          }
+        },
+        {
+          "id": "f3",
+          "style": "note",
+          "text": "Biaya part & jasa",
+          "cue": {
+            "word": "Kamu"
+          }
+        }
+      ],
+      "marks": [
+        {
+          "id": "sign",
+          "word": "setuju"
+        },
+        {
+          "id": "work",
+          "word": "baru"
+        }
+      ]
+    },
+    {
+      "id": "payoff",
+      "vo": "Masuk sehat, keluar tetap sehat.",
+      "voHighlight": [
+        "keluar tetap sehat."
+      ],
+      "texts": [
+        {
+          "id": "payTitle",
+          "style": "title",
+          "text": "MASUK SEHAT, KELUAR TETAP SEHAT",
+          "cue": {
+            "word": "Masuk"
+          }
+        }
+      ],
+      "marks": []
+    },
+    {
+      "id": "cta",
+      "vo": "Servis tenang, ya ke Doktermobil.",
+      "voHighlight": [
+        "Doktermobil."
+      ],
+      "texts": [
+        {
+          "id": "book",
+          "style": "handle",
+          "text": "Booking servis di Doktermobil",
+          "cue": {
+            "word": "Servis"
+          }
+        }
+      ],
+      "marks": []
+    }
+  ]
+}
