@@ -5,7 +5,7 @@
 import { mkdirSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { OUT } from "../lib/paths";
-import { ffmpeg, loadSoft, positional, remotion, ROOT } from "./common";
+import { compositionOf, ffmpeg, loadSoft, positional, remotion, ROOT } from "./common";
 
 const id = positional()[0];
 if (!id) {
@@ -29,7 +29,7 @@ for (const [i, s] of e.scenes.entries()) {
   const frame = start + Math.round(len * 0.8);
   start += len;
   const file = path.join(dir, `${String(i + 1).padStart(2, "0")}-${s.shot}.jpg`);
-  remotion(["still", "src/index.ts", "Soft2D", file, `--props=${props}`, `--frame=${frame}`, "--image-format=jpeg", "--scale=0.4", "--log=error"]);
+  remotion(["still", "src/index.ts", compositionOf(e), file, `--props=${props}`, `--frame=${frame}`, "--image-format=jpeg", "--scale=0.4", "--log=error"]);
   files.push(file);
   console.log(`  ${path.basename(file)}`);
 }

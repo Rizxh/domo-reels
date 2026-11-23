@@ -17,6 +17,8 @@ import ep08 from "../data/episodes/ep08.json";
 import { sceneStarts, Soft2D } from "./compositions/Soft2D";
 import { SoftThumb, softThumbSchema } from "./compositions/SoftThumb";
 import { softPropsSchema, type SoftProps } from "./softSchema";
+import ep09 from "../data/episodes/ep09.json";
+import { Soft169, Soft169Thumb, soft169ThumbSchema } from "./compositions/Soft169";
 import { calculateExplainerMetadata } from "./explainer/metadata";
 import { explainerPropsSchema, type ExplainerProps } from "./explainerSchema";
 import { PrevizFrame } from "./components/PrevizFrame";
@@ -149,6 +151,30 @@ export const RemotionRoot: React.FC = () => {
         fps={FPS}
         width={VIDEO.width}
         height={VIDEO.height}
+      />
+      {/* 16:9 soft format (EP09 onward, YouTube): kasus world, split layout. */}
+      <Composition
+        id="Soft169"
+        component={Soft169}
+        schema={softPropsSchema}
+        defaultProps={softPropsSchema.parse({ ...ep09, debug: true })}
+        calculateMetadata={({ props }: { props: SoftProps }) => ({
+          durationInFrames: Math.max(FPS, sceneStarts(props.scenes)[props.scenes.length]),
+        })}
+        durationInFrames={PLACEHOLDER_DURATION_IN_FRAMES}
+        fps={FPS}
+        width={1920}
+        height={1080}
+      />
+      <Composition
+        id="Soft169Thumb"
+        component={Soft169Thumb}
+        schema={soft169ThumbSchema}
+        defaultProps={soft169ThumbSchema.parse({ world: "kasus", shot: "k-hook", at: 0.7, title: "RODA LEPAS SETELAH 1–2 KM", highlight: "LEPAS", hook: "Kejadian #1 · BYD Atto 1", handle: "@doktermobil" })}
+        durationInFrames={1}
+        fps={FPS}
+        width={1920}
+        height={1080}
       />
       {/* Talking-head cut with illustrations over the raw take. */}
       <Composition

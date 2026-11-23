@@ -1,0 +1,446 @@
+{
+  "id": "ep10",
+  "format": "soft",
+  "aspect": "16:9",
+  "world": "kasus",
+  "title": "Kejadian 2 Jaecoo J5 EV di Tanah Abang",
+  "handle": "@doktermobil",
+  "brandName": "DOKTERMOBIL",
+  "tagline": "Rawat mobil, jaga yang di dalamnya.",
+  "musicParts": [
+    {
+      "src": "audio/bgm/ep10-build.wav",
+      "at": 0,
+      "until": 43,
+      "fadeIn": 0.3,
+      "fadeOut": 1.6
+    },
+    {
+      "src": "audio/bgm/ep10-riser.wav",
+      "at": 39,
+      "until": 42,
+      "fadeIn": 0.2,
+      "fadeOut": 0.1,
+      "volume": 0.8
+    },
+    {
+      "src": "audio/bgm/ep10-resolve.wav",
+      "at": 42,
+      "fadeIn": 0.05,
+      "fadeOut": 1.2
+    }
+  ],
+  "ending": {
+    "fade": 0.6,
+    "black": 0.5
+  },
+  "claims": [
+    {
+      "text": "Rabu, 4 November 2026 sekitar pukul 08.20 WIB, Jaecoo J5 EV mengalami insiden di Jl. KH Mas Mansyur, Karet Tengsin, Tanah Abang, Jakarta Pusat. Sumber: Kompas.com (6 Nov 2026), Medcom.id.",
+      "reviewed": false
+    },
+    {
+      "text": "Roda depan kanan beserta rangkaian suspensinya lepas di lokasi (laporan awal menyebut roda belakang, Jaecoo mengoreksi: roda depan). Sumber: Kompas.com, Medcom.id.",
+      "reviewed": false
+    },
+    {
+      "text": "Menurut pemeriksaan tim teknis Jaecoo, mobil lebih dulu menabrak trotoar dan pagar pembatas dengan keras; kerusakan juga di bumper, fender, dan pintu depan kanan. Sumber: Kompas.com, Medcom.id.",
+      "reviewed": false
+    },
+    {
+      "text": "Jaecoo Indonesia: tidak ditemukan indikasi cacat produk sebagai pemicu kejadian (hasil pemeriksaan internal pabrikan, belum ada investigasi independen). Sumber: Kompas.com (6 Nov 2026), Medcom.id.",
+      "reviewed": false
+    },
+    {
+      "text": "Saran umum: setelah menabrak trotoar, cek lengan suspensi, ball joint, dan dudukan roda (saran perawatan, bukan klaim penyebab insiden).",
+      "reviewed": false
+    }
+  ],
+  "scenes": [
+    {
+      "shot": "k2-hook",
+      "seconds": 4,
+      "cues": {
+        "flip1": 0.35,
+        "flip2": 0.8,
+        "park": 1.25,
+        "crack": 1.5,
+        "title": 2.0
+      },
+      "screen": {
+        "title": "2 HARI KEMUDIAN… TERULANG",
+        "dayFrom": "2",
+        "dayTo": "4",
+        "month": "NOV"
+      },
+      "sfx": [
+        {
+          "sound": "paper",
+          "at": 0.087
+        },
+        {
+          "sound": "paper",
+          "at": 0.2
+        },
+        {
+          "sound": "slam",
+          "at": 0.375
+        },
+        {
+          "sound": "crackle",
+          "at": 0.375
+        },
+        {
+          "sound": "boom",
+          "at": 0.38
+        },
+        {
+          "sound": "whoosh",
+          "at": 0.395
+        },
+        {
+          "sound": "tick",
+          "at": 0.5
+        }
+      ],
+      "vo": {
+        "text": "Dua hari kemudian, kejadian serupa terulang. Kali ini, roda depan beserta suspensinya lepas di tempat."
+      }
+    },
+    {
+      "shot": "k-label",
+      "seconds": 3,
+      "screen": {
+        "number": "02",
+        "kicker": "KEJADIAN #2",
+        "title": "Jaecoo J5 EV",
+        "subtitle": "Tanah Abang, Jakarta Pusat"
+      },
+      "sfx": [
+        {
+          "sound": "whoosh",
+          "at": 0.02
+        }
+      ],
+      "vo": {
+        "text": "Kejadian kedua: Jaecoo J5 EV, Tanah Abang."
+      }
+    },
+    {
+      "shot": "k2-where",
+      "seconds": 8,
+      "cues": {
+        "date": 0.3,
+        "time": 1.9,
+        "place": 3.9
+      },
+      "screen": {
+        "dateLabel": "Hari & tanggal",
+        "date": "Rabu, 4 Nov 2026",
+        "timeLabel": "Sekitar pukul",
+        "time": "08:20",
+        "placeLabel": "Lokasi",
+        "place": "Jl. KH Mas Mansyur",
+        "placeSub": "Karet Tengsin, Tanah Abang",
+        "area": "TANAH ABANG · JAKARTA PUSAT",
+        "pinLabel": "Karet Tengsin",
+        "road1": "Jl. KH Mas Mansyur",
+        "source": "Kompas.com · Medcom.id, Nov 2026"
+      },
+      "sfx": [
+        {
+          "sound": "pop",
+          "at": 0.037
+        },
+        {
+          "sound": "pop",
+          "at": 0.113
+        },
+        {
+          "sound": "pop",
+          "at": 0.237
+        },
+        {
+          "sound": "tick",
+          "at": 0.263
+        },
+        {
+          "sound": "tick",
+          "at": 0.3
+        },
+        {
+          "sound": "tick",
+          "at": 0.338
+        },
+        {
+          "sound": "tick",
+          "at": 0.375
+        },
+        {
+          "sound": "tick",
+          "at": 0.412
+        },
+        {
+          "sound": "bell",
+          "at": 0.45
+        },
+        {
+          "sound": "pop",
+          "at": 0.487
+        }
+      ],
+      "vo": {
+        "text": "Rabu, 4 November 2026, sekitar jam delapan lewat dua puluh pagi. Lokasinya di Jalan KH Mas Mansyur, Karet Tengsin, Tanah Abang, Jakarta Pusat."
+      }
+    },
+    {
+      "shot": "k2-diff",
+      "seconds": 7,
+      "cues": {
+        "right": 1.7,
+        "stop": 2.5,
+        "ring": 3.0,
+        "text2": 3.3
+      },
+      "screen": {
+        "kicker": "BEDANYA",
+        "label1": "KEJADIAN #1",
+        "car1": "BYD Atto 1 · Cengkareng",
+        "km1": "1–2 km",
+        "text1": "Masih jalan 1–2 km → lepas",
+        "label2": "KEJADIAN #2",
+        "car2": "Jaecoo J5 EV · Tanah Abang",
+        "text2": "Langsung lepas di lokasi"
+      },
+      "sfx": [
+        {
+          "sound": "whoosh",
+          "at": 0.02
+        },
+        {
+          "sound": "tick",
+          "at": 0.071
+        },
+        {
+          "sound": "pop",
+          "at": 0.157
+        },
+        {
+          "sound": "whoosh",
+          "at": 0.243
+        },
+        {
+          "sound": "slam",
+          "at": 0.357
+        },
+        {
+          "sound": "crackle",
+          "at": 0.36
+        },
+        {
+          "sound": "bell",
+          "at": 0.429
+        },
+        {
+          "sound": "pop",
+          "at": 0.471
+        }
+      ],
+      "vo": {
+        "text": "Bedanya dengan kejadian pertama: roda depan kanan beserta rangkaian suspensinya langsung lepas di lokasi."
+      }
+    },
+    {
+      "shot": "k2-exam",
+      "seconds": 11,
+      "cues": {
+        "curb": 1.0,
+        "fence": 2.6,
+        "off": 4.2,
+        "top": 6.1,
+        "z1": 7.0,
+        "z2": 7.8,
+        "z3": 8.6
+      },
+      "screen": {
+        "kicker": "HASIL PEMERIKSAAN TIM TEKNIS JAECOO",
+        "s1": "Menabrak trotoar",
+        "s2": "Menabrak pagar pembatas",
+        "s3": "Roda depan kanan + suspensi lepas",
+        "damageLabel": "Kerusakan lain:",
+        "d1": "Bumper",
+        "d2": "Fender",
+        "d3": "Pintu depan kanan",
+        "front": "DEPAN",
+        "rightSide": "SISI KANAN",
+        "source": "Jaecoo Indonesia via Kompas.com · Medcom.id"
+      },
+      "sfx": [
+        {
+          "sound": "whoosh",
+          "at": 0.014
+        },
+        {
+          "sound": "slam",
+          "at": 0.091
+        },
+        {
+          "sound": "boom",
+          "at": 0.236
+        },
+        {
+          "sound": "slam",
+          "at": 0.238
+        },
+        {
+          "sound": "crackle",
+          "at": 0.382
+        },
+        {
+          "sound": "bell",
+          "at": 0.418
+        },
+        {
+          "sound": "whoosh",
+          "at": 0.555
+        },
+        {
+          "sound": "pop",
+          "at": 0.636
+        },
+        {
+          "sound": "pop",
+          "at": 0.709
+        },
+        {
+          "sound": "pop",
+          "at": 0.782
+        }
+      ],
+      "vo": {
+        "text": "Dari pemeriksaan tim teknis Jaecoo, mobil lebih dulu menabrak trotoar dan pagar pembatas dengan keras. Kerusakannya juga sampai ke bumper, fender, dan pintu depan kanan."
+      }
+    },
+    {
+      "shot": "k2-statement",
+      "seconds": 9,
+      "cues": {
+        "type": 0.7,
+        "typed": 3.4,
+        "by": 3.7,
+        "stamp": 4.6
+      },
+      "screen": {
+        "org": "JAECOO INDONESIA",
+        "kind": "Pernyataan resmi",
+        "quote": "“Tidak ditemukan indikasi cacat produk sebagai pemicu kejadian”",
+        "by": "Berdasarkan pemeriksaan tim teknis Jaecoo",
+        "stamp": "HASIL PEMERIKSAAN",
+        "source": "Kompas.com (6 Nov 2026) · Medcom.id"
+      },
+      "sfx": [
+        {
+          "sound": "paper",
+          "at": 0.01
+        },
+        {
+          "sound": "tick",
+          "at": 0.089
+        },
+        {
+          "sound": "tick",
+          "at": 0.139
+        },
+        {
+          "sound": "tick",
+          "at": 0.189
+        },
+        {
+          "sound": "tick",
+          "at": 0.239
+        },
+        {
+          "sound": "tick",
+          "at": 0.289
+        },
+        {
+          "sound": "tick",
+          "at": 0.339
+        },
+        {
+          "sound": "slam",
+          "at": 0.511
+        },
+        {
+          "sound": "paper",
+          "at": 0.513
+        }
+      ],
+      "vo": {
+        "text": "Jaecoo menyatakan, tidak ditemukan indikasi cacat produk sebagai pemicu kejadian."
+      }
+    },
+    {
+      "shot": "k2-lesson",
+      "seconds": 8,
+      "outro": true,
+      "hold": 1.5,
+      "cues": {
+        "title": 0.3,
+        "check": 1.6,
+        "c1": 2.3,
+        "c2": 3.1,
+        "c3": 3.9
+      },
+      "screen": {
+        "kicker": "PELAJARAN",
+        "title": "Nabrak trotoar?|Bukan cuma bodi|yang kena",
+        "checkLabel": "Cek:",
+        "c1": "Lengan suspensi",
+        "c2": "Ball joint",
+        "c3": "Dudukan roda",
+        "panelLabel": "X-RAY · SUSPENSI DEPAN"
+      },
+      "sfx": [
+        {
+          "sound": "whoosh",
+          "at": 0.037
+        },
+        {
+          "sound": "pop",
+          "at": 0.287
+        },
+        {
+          "sound": "pop",
+          "at": 0.388
+        },
+        {
+          "sound": "pop",
+          "at": 0.487
+        }
+      ],
+      "vo": {
+        "text": "Pelajarannya: benturan keras ke trotoar bisa langsung mematahkan komponen kaki-kaki depan. Kalau pernah nabrak trotoar, jangan cuma lihat bodinya. Cek juga lengan suspensi dan dudukan rodanya."
+      }
+    }
+  ],
+  "thumb": {
+    "scene": 1,
+    "at": 0.4225,
+    "title": "2 HARI KEMUDIAN TERULANG",
+    "highlight": "TERULANG",
+    "hook": "Kejadian #2 · Jaecoo J5 EV",
+    "offset": 0
+  },
+  "post": {
+    "caption": "Dua hari setelah kejadian BYD Atto 1 di Cengkareng, kejadian serupa terulang: Jaecoo J5 EV kehilangan roda depan kanan beserta suspensinya di Jl. KH Mas Mansyur, Tanah Abang (Rabu, 4 November 2026).\n\nMenurut pemeriksaan tim teknis Jaecoo, mobil lebih dulu menabrak trotoar dan pagar pembatas dengan keras. Jaecoo menyatakan tidak ditemukan indikasi cacat produk.\n\nPelajarannya: kalau pernah nabrak trotoar, jangan cuma lihat bodinya. Cek juga lengan suspensi, ball joint, dan dudukan roda.\n\nFollow @doktermobil untuk info otomotif lainnya!\n\nSumber: Kompas.com (6 Nov 2026), Medcom.id; pernyataan Jaecoo Indonesia.",
+    "hashtags": [
+      "doktermobil",
+      "JaecooJ5EV",
+      "otomotif",
+      "kakikaki",
+      "safetydriving",
+      "beritaotomotif"
+    ]
+  }
+}

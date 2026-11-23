@@ -25,6 +25,7 @@ type RawScene = {
   shot: string;
   seconds: number;
   outro?: boolean;
+  hold?: number;
   vo: {
     text: string;
     src?: string;
@@ -83,7 +84,7 @@ const main = async () => {
     if (!s.vo.seconds) continue;
     s.seconds =
       Math.round(
-        Math.min(15, Math.max(s.outro ? 4 : 2.5, s.vo.seconds + 0.35)) * 100,
+        Math.min(15, Math.max(s.outro ? 4 : 2.5, s.vo.seconds + 0.35 + (s.hold ?? 0))) * 100,
       ) / 100;
   }
   writeRaw(id, ep);

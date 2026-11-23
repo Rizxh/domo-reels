@@ -70,6 +70,21 @@ The soft format is a Kok Bisa-style animated explainer with our own calm look: s
   - If only a weak source exists, rewrite the scene.
 - **Ending line:** "Follow Doktermobil untuk info otomotif lainnya!"
 
+## Toon format (EP11 onward)
+
+2D card characters in a coloured three.js world with black ink outlines, lens blur and gliding cameras. Base code from the MIT skill `mromidev/claude-animated-shorts`, copied into `src/toon/` (engine: `toon.ts`, `ink.ts`, `lensblur.ts`, `grade.ts`, `lights.ts`) with one folder per story (`src/toon/benz/`: `cues.ts` word cues, `shots.ts` cameras, `stage.ts` who stands where, `set.ts`/`car.ts` geometry, `fx.ts` 2D inserts). Style rules: `docs/ep11/STYLE_BIBLE.md`.
+
+1. VO: `npx tsx scripts/toon/voice.ts <id> [--all|--only 3,5]`. ElevenLabs `eleven_v3` (stability 0.5, similarity 0.9), then ffmpeg trims silence and speeds up (`narration.tempo`, 1.15 on EP11) and the word times are rescaled. `vo.tts` may carry v3 audio tags (`[confident]`), while `vo.text` stays the clean subtitle text. Keep the total under 60 s.
+   Subtitles come from the word timings (`captionHighlight` words in yellow #FFD60A). The end card (`cta.line`, `cta.signs`) appears on the word "cek".
+2. Stills: `REMOTION_TMP=C:/Portofolio/.remotion-tmp node scripts/toon/stills.mjs out/look/<id>/vN_ <frames> 0.5`.
+3. Audio: `npx tsx scripts/toon/<id>-audio.ts` (VO + ducked `soft-drive` bed + synthesized SFX, loudnorm -14 LUFS) to `out/produce/<id>_mix.wav`.
+4. Render: `node scripts/toon/render.mjs <id> "<Title>"` (240-frame muted chunks, resumable, then mux) to `out/video/<id> - <Title>.mp4`.
+5. QA: `python scripts/toon/qa.py "out/video/<id> - <Title>.mp4"` (specs, loudness, frame sheet, glitch scan: pops and whips must be empty).
+
+Reference stories: `src/toon/ac/` (EP13, pattern A case/ad: cabin MPV with x-ray, AC box stage, labels, airflow, ad CTA card) and `src/toon/benz/` (EP11, pattern B fun fact). Formula v2: `docs/toon/FORMULA.md`.
+
+New toon episodes: `/buat-toon` (`.claude/skills/buat-toon/SKILL.md`), formula in `docs/toon/FORMULA.md`, themes in `docs/toon/TEMA.md`.
+
 ## New episodes
 
 Use the `/buat-video` skill (`.claude/skills/buat-video/SKILL.md`): plan with `docs/templates/PLAN-TEMPLATE.md`, get one approval, then produce without stopping. Laptop setup: `docs/setup/SETUP-LAPTOP.md`.

@@ -24,6 +24,7 @@ export type VoiceSettings = {
   style?: string; // delivery notes (OpenAI instructions; ElevenLabs v3 ignores)
   stability?: number; // ElevenLabs 0..1 (lower = livelier intonation)
   exaggeration?: number; // ElevenLabs style exaggeration 0..1 (higher = more expressive)
+  similarity?: number; // ElevenLabs similarity boost 0..1 (higher = closer to the source voice)
 };
 export type Voice = { id: string; label: string; desc?: string };
 export type TtsResult = { audio: Buffer; ext: "mp3" | "wav"; words: { w: string; t: number }[]; seconds: number };
@@ -123,7 +124,10 @@ const charsToWords = (chars: string[], starts: number[]) => {
   const out: { w: string; t: number }[] = [];
   let cur = "";
   let t0 = 0;
+  let tag = false; // inside an ElevenLabs v3 audio tag like [confident]: not spoken, no word
   chars.forEach((ch, i) => {
+    if (ch === "[") { tag = true; return; }
+    if (tag) { if (ch === "]") tag = false; return; }
     if (/\s/.test(ch)) {
       if (cur) out.push({ w: cur, t: t0 });
       cur = "";
@@ -182,7 +186,9 @@ export const synth = async (text: string, v: VoiceSettings, ctx: { previous?: st
         text: clean,
         model_id: model,
         ...(v3 ? {} : { previous_text: ctx.previous, next_text: ctx.next }),
-        voice_settings: { stability: v.stability ?? 0.5, similarity_boost: 0.75, style: v.exaggeration ?? 0.2, speed: Math.min(1.2, Math.max(0.7, v.speed ?? 1)) },
+        // v3 only takes stability 0 / 0.5 / 1 (creative / natural / robust)
+        voice_settings: { stability: v3 ? [0, 0.5, 1].reduce((a, b) => (Math.abs(b - (v.stability ?? 0.5)) < Math.abs(a - (v.stability ?? 0.5)) ? b : a)) : v.stability ?? 0.5,
+          similarity_boost: v.similarity ?? 0.75, style: v.exaggeration ?? 0.2, ...(v3 ? {} : { speed: Math.min(1.2, Math.max(0.7, v.speed ?? 1)) }) },
       }),
       signal: AbortSignal.timeout(90_000),
     });

@@ -1,0 +1,829 @@
+{
+  "id": "ep11",
+  "format": "toon",
+  "title": "Montir Pertama di Dunia",
+  "series": "Sejarah Otomotif",
+  "narration": {
+    "model": "eleven_v3",
+    "stability": 0.5,
+    "similarity": 0.9,
+    "exaggeration": 0.35,
+    "tempo": 1.15,
+    "pad": 0.12
+  },
+  "scenes": [
+    {
+      "shot": "hook",
+      "seconds": 2.93,
+      "vo": {
+        "text": "Kampas rem pertama di dunia dibuat oleh tukang sepatu.",
+        "tts": "[confident] Kampas rem pertama di dunia dibuat oleh tukang sepatu.",
+        "src": "audio/ep11/s01.mp3",
+        "words": [
+          {
+            "w": "Kampas",
+            "t": 0.052
+          },
+          {
+            "w": "rem",
+            "t": 0.207
+          },
+          {
+            "w": "pertama",
+            "t": 0.405
+          },
+          {
+            "w": "di",
+            "t": 0.735
+          },
+          {
+            "w": "dunia",
+            "t": 0.85
+          },
+          {
+            "w": "dibuat",
+            "t": 1.25
+          },
+          {
+            "w": "oleh",
+            "t": 1.727
+          },
+          {
+            "w": "tukang",
+            "t": 1.963
+          },
+          {
+            "w": "sepatu.",
+            "t": 2.288
+          }
+        ],
+        "seconds": 2.81
+      }
+    },
+    {
+      "shot": "escape",
+      "seconds": 3.03,
+      "vo": {
+        "text": "Gara-garanya, seorang ibu kabur membawa mobil suaminya.",
+        "tts": "[playful] Gara-garanya, seorang ibu kabur membawa mobil suaminya.",
+        "src": "audio/ep11/s02.mp3",
+        "words": [
+          {
+            "w": "Gara-garanya,",
+            "t": 0.052
+          },
+          {
+            "w": "seorang",
+            "t": 0.731
+          },
+          {
+            "w": "ibu",
+            "t": 1.079
+          },
+          {
+            "w": "kabur",
+            "t": 1.311
+          },
+          {
+            "w": "membawa",
+            "t": 1.631
+          },
+          {
+            "w": "mobil",
+            "t": 1.996
+          },
+          {
+            "w": "suaminya.",
+            "t": 2.331
+          }
+        ],
+        "seconds": 2.91
+      }
+    },
+    {
+      "shot": "setting",
+      "seconds": 7.71,
+      "vo": {
+        "text": "Tahun 1888, Bertha Benz, istri Karl Benz, mengajak dua anaknya menyetir seratus enam kilometer ke rumah ibunya.",
+        "src": "audio/ep11/s03.mp3",
+        "words": [
+          {
+            "w": "Tahun",
+            "t": 0
+          },
+          {
+            "w": "1888,",
+            "t": 0.278
+          },
+          {
+            "w": "Bertha",
+            "t": 2.139
+          },
+          {
+            "w": "Benz,",
+            "t": 2.504
+          },
+          {
+            "w": "istri",
+            "t": 2.922
+          },
+          {
+            "w": "Karl",
+            "t": 3.27
+          },
+          {
+            "w": "Benz,",
+            "t": 3.617
+          },
+          {
+            "w": "mengajak",
+            "t": 3.993
+          },
+          {
+            "w": "dua",
+            "t": 4.417
+          },
+          {
+            "w": "anaknya",
+            "t": 4.577
+          },
+          {
+            "w": "menyetir",
+            "t": 4.991
+          },
+          {
+            "w": "seratus",
+            "t": 5.478
+          },
+          {
+            "w": "enam",
+            "t": 5.83
+          },
+          {
+            "w": "kilometer",
+            "t": 6.104
+          },
+          {
+            "w": "ke",
+            "t": 6.655
+          },
+          {
+            "w": "rumah",
+            "t": 6.783
+          },
+          {
+            "w": "ibunya.",
+            "t": 7.003
+          }
+        ],
+        "seconds": 7.59
+      }
+    },
+    {
+      "shot": "pharmacy",
+      "seconds": 7.83,
+      "source": "Mercedes-Benz Group",
+      "vo": {
+        "text": "Bensin habis, pom belum ada, jadi dia beli bahan bakar di apotek. Mercedes-Benz menyebutnya pom bensin pertama di dunia.",
+        "src": "audio/ep11/s04.mp3",
+        "words": [
+          {
+            "w": "Bensin",
+            "t": 0
+          },
+          {
+            "w": "habis,",
+            "t": 0.33
+          },
+          {
+            "w": "pom",
+            "t": 0.939
+          },
+          {
+            "w": "belum",
+            "t": 1.09
+          },
+          {
+            "w": "ada,",
+            "t": 1.391
+          },
+          {
+            "w": "jadi",
+            "t": 1.878
+          },
+          {
+            "w": "dia",
+            "t": 2.296
+          },
+          {
+            "w": "beli",
+            "t": 2.557
+          },
+          {
+            "w": "bahan",
+            "t": 2.817
+          },
+          {
+            "w": "bakar",
+            "t": 3.113
+          },
+          {
+            "w": "di",
+            "t": 3.502
+          },
+          {
+            "w": "apotek.",
+            "t": 3.757
+          },
+          {
+            "w": "Mercedes-Benz",
+            "t": 4.429
+          },
+          {
+            "w": "menyebutnya",
+            "t": 5.106
+          },
+          {
+            "w": "pom",
+            "t": 5.635
+          },
+          {
+            "w": "bensin",
+            "t": 5.913
+          },
+          {
+            "w": "pertama",
+            "t": 6.33
+          },
+          {
+            "w": "di",
+            "t": 6.887
+          },
+          {
+            "w": "dunia.",
+            "t": 7.096
+          }
+        ],
+        "seconds": 7.71
+      },
+      "sourceAt": "Mercedes-Benz"
+    },
+    {
+      "shot": "fixes",
+      "seconds": 6.53,
+      "vo": {
+        "text": "Saluran bensin mampet? Ditusuk jarum topi. Pengapian rusak? Diikat pakai garter stoking. Tanjakan? Anak-anaknya turun mendorong.",
+        "src": "audio/ep11/s05.mp3",
+        "words": [
+          {
+            "w": "Saluran",
+            "t": 0
+          },
+          {
+            "w": "bensin",
+            "t": 0.383
+          },
+          {
+            "w": "mampet?",
+            "t": 0.661
+          },
+          {
+            "w": "Ditusuk",
+            "t": 1.096
+          },
+          {
+            "w": "jarum",
+            "t": 1.496
+          },
+          {
+            "w": "topi.",
+            "t": 1.739
+          },
+          {
+            "w": "Pengapian",
+            "t": 2.115
+          },
+          {
+            "w": "rusak?",
+            "t": 2.557
+          },
+          {
+            "w": "Diikat",
+            "t": 2.968
+          },
+          {
+            "w": "pakai",
+            "t": 3.322
+          },
+          {
+            "w": "garter",
+            "t": 3.583
+          },
+          {
+            "w": "stoking.",
+            "t": 3.919
+          },
+          {
+            "w": "Tanjakan?",
+            "t": 4.435
+          },
+          {
+            "w": "Anak-anaknya",
+            "t": 5.032
+          },
+          {
+            "w": "turun",
+            "t": 5.548
+          },
+          {
+            "w": "mendorong.",
+            "t": 5.809
+          }
+        ],
+        "seconds": 6.41
+      }
+    },
+    {
+      "shot": "downhill",
+      "seconds": 2.76,
+      "vo": {
+        "text": "Lalu di turunan, rem kayunya habis.",
+        "tts": "[tense] Lalu di turunan, rem kayunya habis.",
+        "src": "audio/ep11/s06.mp3",
+        "words": [
+          {
+            "w": "Lalu",
+            "t": 0.052
+          },
+          {
+            "w": "di",
+            "t": 0.316
+          },
+          {
+            "w": "turunan,",
+            "t": 0.461
+          },
+          {
+            "w": "rem",
+            "t": 1.087
+          },
+          {
+            "w": "kayunya",
+            "t": 1.313
+          },
+          {
+            "w": "habis.",
+            "t": 1.887
+          }
+        ],
+        "seconds": 2.64
+      }
+    },
+    {
+      "shot": "cobbler",
+      "seconds": 4.51,
+      "vo": {
+        "text": "Untungnya, ada tukang sepatu di desa itu. Sialnya, cuma ada tukang sepatu.",
+        "tts": "Untungnya, ada tukang sepatu di desa itu. [deadpan] Sialnya, cuma ada tukang sepatu.",
+        "src": "audio/ep11/s07.mp3",
+        "words": [
+          {
+            "w": "Untungnya,",
+            "t": 0
+          },
+          {
+            "w": "ada",
+            "t": 0.609
+          },
+          {
+            "w": "tukang",
+            "t": 0.8
+          },
+          {
+            "w": "sepatu",
+            "t": 1.043
+          },
+          {
+            "w": "di",
+            "t": 1.415
+          },
+          {
+            "w": "desa",
+            "t": 1.513
+          },
+          {
+            "w": "itu.",
+            "t": 1.809
+          },
+          {
+            "w": "Sialnya,",
+            "t": 2.357
+          },
+          {
+            "w": "cuma",
+            "t": 3.113
+          },
+          {
+            "w": "ada",
+            "t": 3.374
+          },
+          {
+            "w": "tukang",
+            "t": 3.513
+          },
+          {
+            "w": "sepatu.",
+            "t": 3.803
+          }
+        ],
+        "seconds": 4.39
+      }
+    },
+    {
+      "shot": "leather",
+      "seconds": 4.23,
+      "vo": {
+        "text": "Si tukang sepatu memaku kulit ke balok rem, dan lahirlah kampas rem pertama.",
+        "src": "audio/ep11/s08.mp3",
+        "words": [
+          {
+            "w": "Si",
+            "t": 0
+          },
+          {
+            "w": "tukang",
+            "t": 0.104
+          },
+          {
+            "w": "sepatu",
+            "t": 0.324
+          },
+          {
+            "w": "memaku",
+            "t": 0.73
+          },
+          {
+            "w": "kulit",
+            "t": 1.148
+          },
+          {
+            "w": "ke",
+            "t": 1.437
+          },
+          {
+            "w": "balok",
+            "t": 1.565
+          },
+          {
+            "w": "rem,",
+            "t": 1.878
+          },
+          {
+            "w": "dan",
+            "t": 2.191
+          },
+          {
+            "w": "lahirlah",
+            "t": 2.348
+          },
+          {
+            "w": "kampas",
+            "t": 2.908
+          },
+          {
+            "w": "rem",
+            "t": 3.27
+          },
+          {
+            "w": "pertama.",
+            "t": 3.548
+          }
+        ],
+        "seconds": 4.11
+      }
+    },
+    {
+      "shot": "arrival",
+      "seconds": 6.25,
+      "vo": {
+        "text": "Dia sampai dengan selamat. Jadi, montir jalanan pertama di dunia adalah seorang ibu dengan jarum topi.",
+        "tts": "[relieved] Dia sampai dengan selamat. [warmly] Jadi, montir jalanan pertama di dunia adalah seorang ibu dengan jarum topi.",
+        "src": "audio/ep11/s09.mp3",
+        "words": [
+          {
+            "w": "Dia",
+            "t": 0.052
+          },
+          {
+            "w": "sampai",
+            "t": 0.129
+          },
+          {
+            "w": "dengan",
+            "t": 0.45
+          },
+          {
+            "w": "selamat.",
+            "t": 0.664
+          },
+          {
+            "w": "Jadi,",
+            "t": 1.873
+          },
+          {
+            "w": "montir",
+            "t": 2.23
+          },
+          {
+            "w": "jalanan",
+            "t": 2.63
+          },
+          {
+            "w": "pertama",
+            "t": 2.981
+          },
+          {
+            "w": "di",
+            "t": 3.389
+          },
+          {
+            "w": "dunia",
+            "t": 3.534
+          },
+          {
+            "w": "adalah",
+            "t": 3.949
+          },
+          {
+            "w": "seorang",
+            "t": 4.293
+          },
+          {
+            "w": "ibu",
+            "t": 4.688
+          },
+          {
+            "w": "dengan",
+            "t": 5.012
+          },
+          {
+            "w": "jarum",
+            "t": 5.482
+          },
+          {
+            "w": "topi.",
+            "t": 5.777
+          }
+        ],
+        "seconds": 6.13
+      }
+    },
+    {
+      "shot": "modern",
+      "seconds": 7.1,
+      "vo": {
+        "text": "Sekarang, kampas rem mobilmu bukan kulit lagi, tapi bahan komposit yang menjepit cakram. Tapi tetap saja, ia habis sedikit setiap kali kamu ngerem.",
+        "tts": "[curious] Sekarang, kampas rem mobilmu bukan kulit lagi, tapi bahan komposit yang menjepit cakram. [serious] Tapi tetap saja, ia habis sedikit setiap kali kamu ngerem.",
+        "src": "audio/ep11/s10.mp3",
+        "words": [
+          {
+            "w": "Sekarang,",
+            "t": 0.052
+          },
+          {
+            "w": "kampas",
+            "t": 0.337
+          },
+          {
+            "w": "rem",
+            "t": 0.678
+          },
+          {
+            "w": "mobilmu",
+            "t": 0.835
+          },
+          {
+            "w": "bukan",
+            "t": 1.246
+          },
+          {
+            "w": "kulit",
+            "t": 1.583
+          },
+          {
+            "w": "lagi,",
+            "t": 1.882
+          },
+          {
+            "w": "tapi",
+            "t": 2.23
+          },
+          {
+            "w": "bahan",
+            "t": 2.487
+          },
+          {
+            "w": "komposit",
+            "t": 2.713
+          },
+          {
+            "w": "yang",
+            "t": 3.259
+          },
+          {
+            "w": "menjepit",
+            "t": 3.454
+          },
+          {
+            "w": "cakram.",
+            "t": 3.809
+          },
+          {
+            "w": "Tapi",
+            "t": 4.391
+          },
+          {
+            "w": "tetap",
+            "t": 4.574
+          },
+          {
+            "w": "saja,",
+            "t": 4.803
+          },
+          {
+            "w": "ia",
+            "t": 5.142
+          },
+          {
+            "w": "habis",
+            "t": 5.287
+          },
+          {
+            "w": "sedikit",
+            "t": 5.548
+          },
+          {
+            "w": "setiap",
+            "t": 5.965
+          },
+          {
+            "w": "kali",
+            "t": 6.25
+          },
+          {
+            "w": "kamu",
+            "t": 6.459
+          },
+          {
+            "w": "ngerem.",
+            "t": 6.661
+          }
+        ],
+        "seconds": 6.98
+      }
+    },
+    {
+      "shot": "cta",
+      "seconds": 5.42,
+      "outro": true,
+      "vo": {
+        "text": "Rem mulai berdecit atau pedal terasa dalam? Cek kampas remnya di Doktermobil, sebelum kamu butuh tukang sepatu.",
+        "tts": "[friendly] Rem mulai berdecit atau pedal terasa dalam? Cek kampas remnya di Doktermobil, [playful] sebelum kamu butuh tukang sepatu.",
+        "src": "audio/ep11/s11.mp3",
+        "words": [
+          {
+            "w": "Rem",
+            "t": 0.052
+          },
+          {
+            "w": "mulai",
+            "t": 0.13
+          },
+          {
+            "w": "berdecit",
+            "t": 0.417
+          },
+          {
+            "w": "atau",
+            "t": 0.83
+          },
+          {
+            "w": "pedal",
+            "t": 1.098
+          },
+          {
+            "w": "terasa",
+            "t": 1.365
+          },
+          {
+            "w": "dalam?",
+            "t": 1.724
+          },
+          {
+            "w": "Cek",
+            "t": 2.2
+          },
+          {
+            "w": "kampas",
+            "t": 2.332
+          },
+          {
+            "w": "remnya",
+            "t": 2.583
+          },
+          {
+            "w": "di",
+            "t": 2.907
+          },
+          {
+            "w": "Doktermobil,",
+            "t": 3.052
+          },
+          {
+            "w": "sebelum",
+            "t": 3.817
+          },
+          {
+            "w": "kamu",
+            "t": 4.016
+          },
+          {
+            "w": "butuh",
+            "t": 4.252
+          },
+          {
+            "w": "tukang",
+            "t": 4.565
+          },
+          {
+            "w": "sepatu.",
+            "t": 4.855
+          }
+        ],
+        "seconds": 5.3
+      }
+    }
+  ],
+  "claims": [
+    {
+      "text": "5 Agustus 1888 Bertha Benz menyetir Mannheim ke Pforzheim (sekitar 106 km) bersama Eugen dan Richard tanpa memberi tahu Karl Benz.",
+      "source": "Wikipedia: Bertha Benz; Britannica",
+      "reviewed": false
+    },
+    {
+      "text": "Bahan bakar (ligroin) dibeli di Stadt-Apotheke Wiesloch, yang disebut Mercedes-Benz sebagai pom bensin pertama di dunia.",
+      "source": "Mercedes-Benz Group, 140 Years of Innovation; bertha-benz.de",
+      "reviewed": false
+    },
+    {
+      "text": "Saluran bensin dibersihkan dengan jarum, pengapian diperbaiki dengan garter.",
+      "source": "Kutipan Bertha Benz via bertha-benz.de; Wikipedia",
+      "reviewed": false
+    },
+    {
+      "text": "Tukang sepatu di Bauschlott memaku kulit ke balok rem kayu: kampas rem pertama.",
+      "source": "bertha-benz.de; Wikipedia",
+      "reviewed": false
+    },
+    {
+      "text": "Kampas rem mobil modern terbuat dari bahan gesek komposit dan dijepitkan ke cakram oleh kaliper.",
+      "source": "Penjelasan teknis umum, perlu cek teknisi",
+      "reviewed": false
+    },
+    {
+      "text": "Kampas rem aus sedikit demi sedikit setiap pengereman; rem berdecit atau pedal terasa dalam adalah tanda perlu dicek.",
+      "source": "Perlu cek teknisi",
+      "reviewed": false
+    }
+  ],
+  "post": {
+    "caption": "Kampas rem pertama di dunia dibuat tukang sepatu, gara-gara Bertha Benz kabur bawa mobil suaminya di tahun 1888. Sekarang kampas rem sudah pakai bahan komposit, tapi tetap habis tiap kali ngerem. Rem berdecit atau pedal terasa dalam? Cek kampas rem di Doktermobil.\n\nSumber: Mercedes-Benz Group (140 Years of Innovation), Bertha Benz Memorial Route (bertha-benz.de), Wikipedia: Bertha Benz.\n\n#doktermobil #sejarahotomotif #kampasrem #berthabenz"
+  },
+  "cta": {
+    "line": "Cek kampas rem di Doktermobil",
+    "handle": "@doktermobil",
+    "signs": [
+      "Rem berdecit",
+      "Pedal terasa dalam",
+      "Rem kurang pakem"
+    ]
+  },
+  "captionHighlight": [
+    "kampas",
+    "rem",
+    "tukang",
+    "sepatu",
+    "Bertha",
+    "apotek",
+    "jarum",
+    "topi",
+    "garter",
+    "kulit",
+    "komposit",
+    "cakram",
+    "habis",
+    "Doktermobil",
+    "berdecit",
+    "1888"
+  ]
+}

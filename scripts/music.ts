@@ -227,7 +227,7 @@ const noiseSweep = (dur: number, rnd: () => number) => {
 };
 
 // ---------------------------------------------------------------- pieces
-const BUILD_SECONDS = 34;
+const BUILD_BASE_SECONDS = 34;
 
 type Preset = {
   id: string;
@@ -246,6 +246,8 @@ type Preset = {
   clicks: [number, number];
   // Length of the resolve; longer than the base 11 s repeats its progression.
   resolveSeconds?: number;
+  // Length of the build bed (default 34 s); longer beds plateau after 22 s.
+  buildSeconds?: number;
 };
 
 // EP03 "Ban Tebal Belum Tentu Aman": dark clock bed in A minor, 120 BPM,
@@ -329,9 +331,29 @@ const PRESETS: Preset[] = [
     arp: [69, 72, 77, 81, 77, 72, 67, 70, 74, 77, 81, 77],
     clicks: [2200, 1500],
   },
+  // EP10 "Kejadian 2 Jaecoo J5 EV" (16:9, no voice over): the music carries
+  // the video, so a longer, quieter C minor bed (96 BPM) under the incident
+  // and the statement, a riser into the lesson and a warm Ab to Eb resolve.
+  {
+    id: "ep10",
+    bpm: 96,
+    seed: 1010,
+    bass: 36,
+    ostinato: [60, 63, 67, 68, 67, 63, 60, 55],
+    padA: [48, 55, 63, 67],
+    padB: [44, 56, 60, 63, 67],
+    stinger: [36, 48, 55, 60, 63],
+    resolveA: [44, 56, 60, 63, 67],
+    resolveB: [39, 51, 58, 63, 67],
+    arp: [67, 70, 75, 79, 75, 70, 65, 68, 72, 77, 80, 77],
+    clicks: [2100, 1450],
+    buildSeconds: 43,
+    resolveSeconds: 10,
+  },
 ];
 
 const build = (P: Preset) => {
+  const BUILD_SECONDS = P.buildSeconds ?? BUILD_BASE_SECONDS;
   const tr = new Track(BUILD_SECONDS);
   const rnd = mulberry(P.seed);
   const beats = Math.floor(BUILD_SECONDS / BEAT);

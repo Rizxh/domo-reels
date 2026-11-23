@@ -1,0 +1,824 @@
+{
+  "id": "ep09",
+  "format": "soft",
+  "aspect": "16:9",
+  "world": "kasus",
+  "title": "Kejadian 1 BYD Atto 1 di Cengkareng",
+  "handle": "@doktermobil",
+  "brandName": "DOKTERMOBIL",
+  "tagline": "Rawat mobil, jaga yang di dalamnya.",
+  "music": "audio/bgm/ep07-build.wav",
+  "narration": {
+    "model": "eleven_multilingual_v2",
+    "speed": 1.15,
+    "stability": 0.35,
+    "exaggeration": 0.45
+  },
+  "claims": [
+    {
+      "text": "Senin, 2 November 2026 sekitar pukul 04.00 WIB, BYD Atto 1 mengalami insiden di Jl. Ring Road Raya, depan exit tol Kapuk, Kamal, Cengkareng, Jakarta Barat. Sumber: Kompas.com (5 Nov 2026), kumparan (4 Nov 2026).",
+      "reviewed": false
+    },
+    {
+      "text": "Menurut keterangan pengemudi (dikutip Sudinhub Jakarta Barat), mobil menabrak pembatas jalan lalu pengemudi membanting setir ke kiri. Sumber: kumparan, Medcom.id.",
+      "reviewed": false
+    },
+    {
+      "text": "Setelah benturan, mobil masih berjalan sekitar 1-2 km; lampu indikator ban/kaki-kaki di dashboard kemudian menyala. Sumber: Kompas.com, kumparan, Medcom.id.",
+      "reviewed": false
+    },
+    {
+      "text": "Roda belakang terlepas dari dudukannya (sisi kanan/kiri tidak disebut konsisten oleh sumber). Sumber: kumparan.",
+      "reviewed": false
+    },
+    {
+      "text": "BYD Indonesia (Luther Panjaitan, Head of Public and Government Relations): berdasarkan informasi yang diterima, insiden diakibatkan benturan keras kepada pembatas jalan atau trotoar; tim aftersales berkoordinasi dengan perusahaan pemilik kendaraan untuk pemeriksaan menyeluruh. Sumber: Kompas.com, kumparan.",
+      "reviewed": false
+    },
+    {
+      "text": "Saran umum: setelah benturan keras, periksakan kaki-kaki, as roda, dan dudukan roda walau mobil masih bisa jalan (saran perawatan, bukan klaim penyebab insiden).",
+      "reviewed": false
+    }
+  ],
+  "scenes": [
+    {
+      "shot": "k-hook",
+      "seconds": 5.23,
+      "screen": {
+        "title": "RODA LEPAS SETELAH 1–2 KM"
+      },
+      "sfx": [
+        {
+          "sound": "whoosh",
+          "at": 0.03
+        },
+        {
+          "sound": "bell",
+          "at": 0.36
+        },
+        {
+          "sound": "slam",
+          "at": 0.37
+        }
+      ],
+      "vo": {
+        "text": "Nabrak pembatas jalan, mobilnya masih bisa jalan. Satu sampai dua kilometer kemudian, rodanya lepas.",
+        "src": "audio/ep09/s01.mp3",
+        "words": [
+          {
+            "w": "Nabrak",
+            "t": 0
+          },
+          {
+            "w": "pembatas",
+            "t": 0.418
+          },
+          {
+            "w": "jalan,",
+            "t": 0.824
+          },
+          {
+            "w": "mobilnya",
+            "t": 1.045
+          },
+          {
+            "w": "masih",
+            "t": 1.347
+          },
+          {
+            "w": "bisa",
+            "t": 1.533
+          },
+          {
+            "w": "jalan.",
+            "t": 1.718
+          },
+          {
+            "w": "Satu",
+            "t": 1.974
+          },
+          {
+            "w": "sampai",
+            "t": 2.403
+          },
+          {
+            "w": "dua",
+            "t": 2.694
+          },
+          {
+            "w": "kilometer",
+            "t": 2.856
+          },
+          {
+            "w": "kemudian,",
+            "t": 3.228
+          },
+          {
+            "w": "rodanya",
+            "t": 3.75
+          },
+          {
+            "w": "lepas.",
+            "t": 4.4
+          }
+        ],
+        "seconds": 4.88
+      }
+    },
+    {
+      "shot": "k-label",
+      "seconds": 3,
+      "screen": {
+        "number": "01",
+        "kicker": "KEJADIAN #1",
+        "title": "BYD Atto 1",
+        "subtitle": "Cengkareng, Jakarta Barat"
+      },
+      "sfx": [
+        {
+          "sound": "whoosh",
+          "at": 0.05
+        }
+      ],
+      "vo": {
+        "text": "Kejadian pertama: BYD Atto 1, di Cengkareng.",
+        "src": "audio/ep09/s02.mp3",
+        "words": [
+          {
+            "w": "Kejadian",
+            "t": 0
+          },
+          {
+            "w": "pertama:",
+            "t": 0.406
+          },
+          {
+            "w": "BYD",
+            "t": 0.778
+          },
+          {
+            "w": "Atto",
+            "t": 1.3
+          },
+          {
+            "w": "1,",
+            "t": 1.556
+          },
+          {
+            "w": "di",
+            "t": 1.95
+          },
+          {
+            "w": "Cengkareng.",
+            "t": 2.148
+          }
+        ],
+        "seconds": 2.65
+      }
+    },
+    {
+      "shot": "k-where",
+      "seconds": 8.2,
+      "screen": {
+        "date": "Senin, 2 Nov 2026",
+        "time": "04:00",
+        "timeLabel": "Sekitar pukul",
+        "place": "Jl. Ring Road Raya",
+        "placeSub": "depan Exit Tol Kapuk, Kamal",
+        "road1": "Jl. Ring Road Raya",
+        "road2": "Exit Tol Kapuk",
+        "source": "Kompas.com · kumparan, Nov 2026"
+      },
+      "sfx": [
+        {
+          "sound": "pop",
+          "at": 0.15
+        },
+        {
+          "sound": "tick",
+          "at": 0.3
+        },
+        {
+          "sound": "pop",
+          "at": 0.55
+        }
+      ],
+      "vo": {
+        "text": "Senin, dua November dua ribu dua puluh enam, sekitar jam empat pagi. Lokasinya di Jalan Ring Road Raya, depan exit tol Kapuk, Kamal, Jakarta Barat.",
+        "src": "audio/ep09/s03.mp3",
+        "words": [
+          {
+            "w": "Senin,",
+            "t": 0
+          },
+          {
+            "w": "dua",
+            "t": 0.395
+          },
+          {
+            "w": "November",
+            "t": 0.534
+          },
+          {
+            "w": "dua",
+            "t": 0.859
+          },
+          {
+            "w": "ribu",
+            "t": 0.998
+          },
+          {
+            "w": "dua",
+            "t": 1.219
+          },
+          {
+            "w": "puluh",
+            "t": 1.382
+          },
+          {
+            "w": "enam,",
+            "t": 1.602
+          },
+          {
+            "w": "sekitar",
+            "t": 1.811
+          },
+          {
+            "w": "jam",
+            "t": 2.194
+          },
+          {
+            "w": "empat",
+            "t": 2.426
+          },
+          {
+            "w": "pagi.",
+            "t": 2.647
+          },
+          {
+            "w": "Lokasinya",
+            "t": 3.03
+          },
+          {
+            "w": "di",
+            "t": 3.518
+          },
+          {
+            "w": "Jalan",
+            "t": 3.692
+          },
+          {
+            "w": "Ring",
+            "t": 4.075
+          },
+          {
+            "w": "Road",
+            "t": 4.354
+          },
+          {
+            "w": "Raya,",
+            "t": 4.632
+          },
+          {
+            "w": "depan",
+            "t": 4.911
+          },
+          {
+            "w": "exit",
+            "t": 5.166
+          },
+          {
+            "w": "tol",
+            "t": 5.526
+          },
+          {
+            "w": "Kapuk,",
+            "t": 5.759
+          },
+          {
+            "w": "Kamal,",
+            "t": 6.397
+          },
+          {
+            "w": "Jakarta",
+            "t": 7.001
+          },
+          {
+            "w": "Barat.",
+            "t": 7.419
+          }
+        ],
+        "seconds": 7.85
+      }
+    },
+    {
+      "shot": "k-hit",
+      "seconds": 5.51,
+      "screen": {
+        "quote": "“Menabrak pembatas jalan”",
+        "by": "— menurut pengemudi",
+        "source": "Sudinhub Jakbar via kumparan · Medcom.id"
+      },
+      "sfx": [
+        {
+          "sound": "whoosh",
+          "at": 0.2
+        },
+        {
+          "sound": "slam",
+          "at": 0.62
+        },
+        {
+          "sound": "boom",
+          "at": 0.63
+        }
+      ],
+      "vo": {
+        "text": "Menurut keterangan pengemudi yang dikutip Sudinhub Jakarta Barat, mobil sempat menabrak pembatas jalan.",
+        "src": "audio/ep09/s04.mp3",
+        "words": [
+          {
+            "w": "Menurut",
+            "t": 0
+          },
+          {
+            "w": "keterangan",
+            "t": 0.325
+          },
+          {
+            "w": "pengemudi",
+            "t": 0.697
+          },
+          {
+            "w": "yang",
+            "t": 1.219
+          },
+          {
+            "w": "dikutip",
+            "t": 1.393
+          },
+          {
+            "w": "Sudinhub",
+            "t": 1.73
+          },
+          {
+            "w": "Jakarta",
+            "t": 2.38
+          },
+          {
+            "w": "Barat,",
+            "t": 2.74
+          },
+          {
+            "w": "mobil",
+            "t": 3.007
+          },
+          {
+            "w": "sempat",
+            "t": 3.355
+          },
+          {
+            "w": "menabrak",
+            "t": 3.773
+          },
+          {
+            "w": "pembatas",
+            "t": 4.133
+          },
+          {
+            "w": "jalan.",
+            "t": 4.632
+          }
+        ],
+        "seconds": 5.16
+      }
+    },
+    {
+      "shot": "k-timeline",
+      "seconds": 10.01,
+      "screen": {
+        "s1": "Benturan",
+        "s2": "Banting setir ke kiri",
+        "s3": "Masih jalan ± 1–2 km",
+        "s4": "Indikator dashboard menyala",
+        "s5": "Roda belakang lepas",
+        "source": "Sudinhub Jakbar via Kompas.com · kumparan"
+      },
+      "sfx": [
+        {
+          "sound": "tick",
+          "at": 0.08
+        },
+        {
+          "sound": "tick",
+          "at": 0.25
+        },
+        {
+          "sound": "tick",
+          "at": 0.5
+        },
+        {
+          "sound": "tick",
+          "at": 0.72
+        },
+        {
+          "sound": "bell",
+          "at": 0.9
+        }
+      ],
+      "vo": {
+        "text": "Setelah benturan, pengemudi banting setir ke kiri. Anehnya, mobil masih bisa jalan sekitar satu sampai dua kilometer. Lalu lampu indikator di dashboard menyala, dan akhirnya, roda belakang terlepas.",
+        "src": "audio/ep09/s05.mp3",
+        "words": [
+          {
+            "w": "Setelah",
+            "t": 0
+          },
+          {
+            "w": "benturan,",
+            "t": 0.337
+          },
+          {
+            "w": "pengemudi",
+            "t": 0.894
+          },
+          {
+            "w": "banting",
+            "t": 1.463
+          },
+          {
+            "w": "setir",
+            "t": 1.916
+          },
+          {
+            "w": "ke",
+            "t": 2.276
+          },
+          {
+            "w": "kiri.",
+            "t": 2.38
+          },
+          {
+            "w": "Anehnya,",
+            "t": 2.775
+          },
+          {
+            "w": "mobil",
+            "t": 3.17
+          },
+          {
+            "w": "masih",
+            "t": 3.413
+          },
+          {
+            "w": "bisa",
+            "t": 3.622
+          },
+          {
+            "w": "jalan",
+            "t": 3.82
+          },
+          {
+            "w": "sekitar",
+            "t": 4.087
+          },
+          {
+            "w": "satu",
+            "t": 4.4
+          },
+          {
+            "w": "sampai",
+            "t": 4.679
+          },
+          {
+            "w": "dua",
+            "t": 4.946
+          },
+          {
+            "w": "kilometer.",
+            "t": 5.224
+          },
+          {
+            "w": "Lalu",
+            "t": 5.898
+          },
+          {
+            "w": "lampu",
+            "t": 6.142
+          },
+          {
+            "w": "indikator",
+            "t": 6.362
+          },
+          {
+            "w": "di",
+            "t": 6.861
+          },
+          {
+            "w": "dashboard",
+            "t": 6.989
+          },
+          {
+            "w": "menyala,",
+            "t": 7.43
+          },
+          {
+            "w": "dan",
+            "t": 7.825
+          },
+          {
+            "w": "akhirnya,",
+            "t": 7.988
+          },
+          {
+            "w": "roda",
+            "t": 8.417
+          },
+          {
+            "w": "belakang",
+            "t": 8.649
+          },
+          {
+            "w": "terlepas.",
+            "t": 8.963
+          }
+        ],
+        "seconds": 9.66
+      }
+    },
+    {
+      "shot": "k-statement",
+      "seconds": 10.1,
+      "screen": {
+        "org": "BYD INDONESIA",
+        "quote": "“Berdasarkan informasi yang diterima, insiden diakibatkan benturan keras kepada pembatas jalan atau trotoar.”",
+        "by": "Luther Panjaitan, Head of Public & Government Relations",
+        "status": "Status: pemeriksaan aftersales masih berjalan",
+        "source": "Kompas.com (5 Nov 2026) · kumparan (4 Nov 2026)"
+      },
+      "sfx": [
+        {
+          "sound": "paper",
+          "at": 0.05
+        },
+        {
+          "sound": "tick",
+          "at": 0.7
+        }
+      ],
+      "vo": {
+        "text": "BYD Indonesia menyatakan, berdasarkan informasi yang diterima, insiden ini diakibatkan benturan keras ke pembatas jalan atau trotoar. Tim aftersales masih berkoordinasi untuk pemeriksaan menyeluruh.",
+        "src": "audio/ep09/s06.mp3",
+        "words": [
+          {
+            "w": "BYD",
+            "t": 0
+          },
+          {
+            "w": "Indonesia",
+            "t": 0.302
+          },
+          {
+            "w": "menyatakan,",
+            "t": 0.627
+          },
+          {
+            "w": "berdasarkan",
+            "t": 1.103
+          },
+          {
+            "w": "informasi",
+            "t": 1.765
+          },
+          {
+            "w": "yang",
+            "t": 2.508
+          },
+          {
+            "w": "diterima,",
+            "t": 2.728
+          },
+          {
+            "w": "insiden",
+            "t": 3.228
+          },
+          {
+            "w": "ini",
+            "t": 3.831
+          },
+          {
+            "w": "diakibatkan",
+            "t": 4.075
+          },
+          {
+            "w": "benturan",
+            "t": 4.586
+          },
+          {
+            "w": "keras",
+            "t": 4.969
+          },
+          {
+            "w": "ke",
+            "t": 5.19
+          },
+          {
+            "w": "pembatas",
+            "t": 5.271
+          },
+          {
+            "w": "jalan",
+            "t": 5.619
+          },
+          {
+            "w": "atau",
+            "t": 5.909
+          },
+          {
+            "w": "trotoar.",
+            "t": 6.107
+          },
+          {
+            "w": "Tim",
+            "t": 6.803
+          },
+          {
+            "w": "aftersales",
+            "t": 7.024
+          },
+          {
+            "w": "masih",
+            "t": 7.581
+          },
+          {
+            "w": "berkoordinasi",
+            "t": 7.802
+          },
+          {
+            "w": "untuk",
+            "t": 8.429
+          },
+          {
+            "w": "pemeriksaan",
+            "t": 8.603
+          },
+          {
+            "w": "menyeluruh.",
+            "t": 9.044
+          }
+        ],
+        "seconds": 9.75
+      }
+    },
+    {
+      "shot": "k-lesson",
+      "seconds": 9.63,
+      "outro": true,
+      "hold": 1.9,
+      "screen": {
+        "title": "Masih bisa jalan ≠ aman",
+        "kicker": "PELAJARAN",
+        "c1": "Kaki-kaki",
+        "c2": "As roda",
+        "c3": "Dudukan roda",
+        "checkLabel": "Cek setelah benturan:"
+      },
+      "sfx": [
+        {
+          "sound": "pop",
+          "at": 0.45
+        },
+        {
+          "sound": "pop",
+          "at": 0.55
+        },
+        {
+          "sound": "pop",
+          "at": 0.65
+        }
+      ],
+      "vo": {
+        "text": "Pelajarannya: setelah benturan keras, mobil yang masih bisa jalan belum tentu aman. Kaki-kaki, as roda, dan dudukan roda bisa rusak tanpa kelihatan dari luar.",
+        "src": "audio/ep09/s07.mp3",
+        "words": [
+          {
+            "w": "Pelajarannya:",
+            "t": 0
+          },
+          {
+            "w": "setelah",
+            "t": 0.65
+          },
+          {
+            "w": "benturan",
+            "t": 0.998
+          },
+          {
+            "w": "keras,",
+            "t": 1.324
+          },
+          {
+            "w": "mobil",
+            "t": 1.602
+          },
+          {
+            "w": "yang",
+            "t": 1.95
+          },
+          {
+            "w": "masih",
+            "t": 2.113
+          },
+          {
+            "w": "bisa",
+            "t": 2.519
+          },
+          {
+            "w": "jalan",
+            "t": 2.972
+          },
+          {
+            "w": "belum",
+            "t": 3.355
+          },
+          {
+            "w": "tentu",
+            "t": 3.564
+          },
+          {
+            "w": "aman.",
+            "t": 3.785
+          },
+          {
+            "w": "Kaki-kaki,",
+            "t": 4.005
+          },
+          {
+            "w": "as",
+            "t": 4.598
+          },
+          {
+            "w": "roda,",
+            "t": 4.772
+          },
+          {
+            "w": "dan",
+            "t": 5.097
+          },
+          {
+            "w": "dudukan",
+            "t": 5.236
+          },
+          {
+            "w": "roda",
+            "t": 5.538
+          },
+          {
+            "w": "bisa",
+            "t": 5.735
+          },
+          {
+            "w": "rusak",
+            "t": 5.898
+          },
+          {
+            "w": "tanpa",
+            "t": 6.188
+          },
+          {
+            "w": "kelihatan",
+            "t": 6.432
+          },
+          {
+            "w": "dari",
+            "t": 6.769
+          },
+          {
+            "w": "luar.",
+            "t": 6.931
+          }
+        ],
+        "seconds": 7.38
+      }
+    }
+  ],
+  "thumb": {
+    "scene": 1,
+    "at": 0.5,
+    "title": "RODA LEPAS SETELAH 1–2 KM",
+    "highlight": "LEPAS",
+    "hook": "Kejadian #1 · BYD Atto 1",
+    "offset": 0
+  },
+  "post": {
+    "caption": "Nabrak pembatas jalan, mobil masih bisa jalan... 1–2 km kemudian rodanya lepas. Ini kronologi insiden BYD Atto 1 di Cengkareng, 2 November 2026.\n\nPelajarannya: setelah benturan keras, mobil yang masih bisa jalan belum tentu aman. Periksa kaki-kaki, as roda, dan dudukan roda.\n\nFollow @doktermobil untuk info otomotif lainnya!\n\nSumber: Kompas.com (5 Nov 2026), kumparan (4 Nov 2026), Medcom.id; keterangan pengemudi via Sudinhub Jakarta Barat; pernyataan BYD Indonesia.",
+    "hashtags": [
+      "doktermobil",
+      "BYDAtto1",
+      "otomotif",
+      "kakikaki",
+      "safetydriving",
+      "beritaotomotif"
+    ]
+  }
+}

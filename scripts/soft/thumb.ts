@@ -6,7 +6,7 @@
 import { mkdirSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { OUT } from "../lib/paths";
-import { loadSoft, positional, remotion, ROOT } from "./common";
+import { loadSoft, positional, remotion, ROOT, thumbCompositionOf } from "./common";
 import { niceTitle } from "./title";
 
 const id = positional()[0];
@@ -28,10 +28,11 @@ const props = {
   hook: t.hook,
   handle: e.handle,
   offset: t.offset,
+  screen: sc.screen,
 };
 mkdirSync(OUT.props, { recursive: true });
 const file = path.join(OUT.props, `${id}-thumb.json`);
 writeFileSync(file, JSON.stringify(props));
 const out = path.join(OUT.video, `${id} - ${niceTitle(e.title).replace(/[<>:"/\\|?*]+/g, " ").trim()} - thumbnail.jpg`);
-remotion(["still", "src/index.ts", "SoftThumb", out, `--props=${file}`, "--image-format=jpeg", "--jpeg-quality=92", "--log=error"]);
+remotion(["still", "src/index.ts", thumbCompositionOf(e), out, `--props=${file}`, "--image-format=jpeg", "--jpeg-quality=92", "--log=error"]);
 console.log(`Thumbnail -> ${path.relative(ROOT, out)}`);

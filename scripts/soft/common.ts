@@ -50,6 +50,10 @@ export const remotion = (args: string[]) => {
   }
 };
 
+// Remotion composition of an episode (vertical reel or 16:9 video).
+export const compositionOf = (e: SoftEpisode) => (e.aspect === "16:9" ? "Soft169" : "Soft2D");
+export const thumbCompositionOf = (e: SoftEpisode) => (e.aspect === "16:9" ? "Soft169Thumb" : "SoftThumb");
+
 export const ffmpeg = (args: string[]) => {
   const r = spawnSync("ffmpeg", ["-hide_banner", "-loglevel", "error", "-y", ...args], { cwd: ROOT, stdio: "inherit" });
   if (r.status !== 0) throw new Error(`ffmpeg failed (exit ${r.status})`);

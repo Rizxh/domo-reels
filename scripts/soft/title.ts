@@ -1,5 +1,5 @@
 // File-name title: title case, acronyms (DNS, IP, VPN, 2FA, ...) kept upper case.
-const ACRONYMS = new Set(["DNS", "IP", "OS", "VPN", "CPU", "RAM", "2FA", "HTTP", "HTTPS", "IT", "AI", "SSD", "HDD", "URL", "USB", "LAN", "WAN", "PC", "HP", "UMKM", "OTP", "APK", "PIN", "SMS", "ML", "DL", "GPS", "PBB"]);
+const ACRONYMS = new Set(["DNS", "IP", "OS", "VPN", "CPU", "RAM", "2FA", "HTTP", "HTTPS", "IT", "AI", "SSD", "HDD", "URL", "USB", "LAN", "WAN", "PC", "HP", "UMKM", "OTP", "APK", "PIN", "SMS", "ML", "DL", "GPS", "PBB", "BYD", "SUV", "MPV", "EV", "ABS", "NHTSA", "IIHS"]);
 // Words with their own fixed spelling.
 const SPECIAL: Record<string, string> = { "WI-FI": "Wi-Fi", IPHONE: "iPhone", ANDROID: "Android", WHATSAPP: "WhatsApp", LINUX: "Linux", WINDOWS: "Windows" };
 const SMALL = new Set(["dan", "di", "ke", "dari", "itu", "yang", "atau", "vs", "untuk", "dengan"]);

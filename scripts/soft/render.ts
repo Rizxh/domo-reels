@@ -9,7 +9,7 @@
 import { existsSync, mkdirSync, rmSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { finalVideoPath, OUT } from "../lib/paths";
-import { ffmpeg, flag, loadSoft, positional, remotion, ROOT } from "./common";
+import { compositionOf, ffmpeg, flag, loadSoft, positional, remotion, ROOT } from "./common";
 import { niceTitle } from "./title";
 
 const id = positional()[0];
@@ -32,7 +32,7 @@ if (!(flag("reuse") && existsSync(rendered))) {
   const dir = path.join(OUT.produce, `.chunks-${id}`);
   rmSync(dir, { recursive: true, force: true });
   mkdirSync(dir, { recursive: true });
-  const base = ["render", "src/index.ts", "Soft2D"];
+  const base = ["render", "src/index.ts", compositionOf(e)];
   const opts = [`--props=${props}`, "--timeout=120000", "--concurrency=1", "--log=error"];
   const parts: string[] = [];
   const CHUNK = 600;
@@ -60,6 +60,27 @@ ffmpeg([
   "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-movflags", "+faststart",
   final,
 ]);
+// Subtitles (.srt) next to the video, from the TTS word timings.
+const srtTime = (t: number) => {
+  const ms = Math.max(0, Math.round(t * 1000));
+  const p = (n: number, w = 2) => String(n).padStart(w, "0");
+  return `${p(Math.floor(ms / 3600000))}:${p(Math.floor(ms / 60000) % 60)}:${p(Math.floor(ms / 1000) % 60)},${p(ms % 1000, 3)}`;
+};
+const cues: string[] = [];
+let sceneStart = 0;
+for (const s of e.scenes) {
+  const words = s.vo.words ?? [];
+  for (let i = 0; i < words.length; i += 8) {
+    const chunk = words.slice(i, i + 8);
+    const from = sceneStart + chunk[0].t;
+    const to = sceneStart + (words[i + 8]?.t ?? Math.min(s.vo.seconds ?? s.seconds, s.seconds));
+    cues.push(`${cues.length + 1}\n${srtTime(from)} --> ${srtTime(to - 0.02)}\n${chunk.map((w) => w.w).join(" ")}\n`);
+  }
+  sceneStart += Math.round(s.seconds * 30) / 30;
+}
+// No voice over (no word timings): no subtitle file.
+if (cues.length) writeFileSync(final.replace(/\.mp4$/, ".srt"), cues.join("\n"));
+
 const caption = path.join(OUT.produce, `${id}_caption.md`);
 writeFileSync(
   caption,

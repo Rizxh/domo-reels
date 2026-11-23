@@ -1,0 +1,620 @@
+{
+  "id": "ep13",
+  "format": "toon",
+  "title": "Mobil Kamu Bau Kambing",
+  "series": "Kasus Bengkel",
+  "narration": {
+    "model": "eleven_v3",
+    "stability": 0.5,
+    "similarity": 0.9,
+    "exaggeration": 0.35,
+    "tempo": 1.15,
+    "pad": 0.12
+  },
+  "scenes": [
+    {
+      "shot": "hook",
+      "seconds": 5.5,
+      "vo": {
+        "text": "Gebetan Siska turun dari mobil sambil nutup hidung. Katanya, mobilnya bau kambing!",
+        "tts": "[shocked] Gebetan Siska turun dari mobil sambil nutup hidung. [laughs] Katanya, mobilnya bau kambing!",
+        "src": "audio/ep13/s01.mp3",
+        "words": [
+          {
+            "w": "Gebetan",
+            "t": 0.052
+          },
+          {
+            "w": "Siska",
+            "t": 0.327
+          },
+          {
+            "w": "turun",
+            "t": 0.692
+          },
+          {
+            "w": "dari",
+            "t": 0.96
+          },
+          {
+            "w": "mobil",
+            "t": 1.173
+          },
+          {
+            "w": "sambil",
+            "t": 1.475
+          },
+          {
+            "w": "nutup",
+            "t": 1.944
+          },
+          {
+            "w": "hidung.",
+            "t": 2.292
+          },
+          {
+            "w": "Katanya,",
+            "t": 3.075
+          },
+          {
+            "w": "mobilnya",
+            "t": 3.84
+          },
+          {
+            "w": "bau",
+            "t": 4.327
+          },
+          {
+            "w": "kambing!",
+            "t": 4.605
+          }
+        ],
+        "seconds": 5.38
+      }
+    },
+    {
+      "shot": "problem",
+      "seconds": 3.96,
+      "vo": {
+        "text": "Malu banget! Tiap AC nyala, keluar bau apek kayak kandang kambing.",
+        "tts": "[embarrassed] Malu banget! [disgusted] Tiap AC nyala, keluar bau apek kayak kandang kambing.",
+        "src": "audio/ep13/s02.mp3",
+        "words": [
+          {
+            "w": "Malu",
+            "t": 0.052
+          },
+          {
+            "w": "banget!",
+            "t": 0.296
+          },
+          {
+            "w": "Tiap",
+            "t": 0.874
+          },
+          {
+            "w": "AC",
+            "t": 1.083
+          },
+          {
+            "w": "nyala,",
+            "t": 1.314
+          },
+          {
+            "w": "keluar",
+            "t": 1.885
+          },
+          {
+            "w": "bau",
+            "t": 2.207
+          },
+          {
+            "w": "apek",
+            "t": 2.468
+          },
+          {
+            "w": "kayak",
+            "t": 2.822
+          },
+          {
+            "w": "kandang",
+            "t": 2.972
+          },
+          {
+            "w": "kambing.",
+            "t": 3.25
+          }
+        ],
+        "seconds": 3.84
+      }
+    },
+    {
+      "shot": "falsehope",
+      "seconds": 5.69,
+      "vo": {
+        "text": "Pengharum udah ganti tiga kali, parfum disemprot terus. Wanginya cuma sebentar, baunya balik lagi.",
+        "tts": "[frustrated] Pengharum udah ganti tiga kali, parfum disemprot terus. [sighs] Wanginya cuma sebentar, baunya balik lagi.",
+        "src": "audio/ep13/s03.mp3",
+        "words": [
+          {
+            "w": "Pengharum",
+            "t": 0.052
+          },
+          {
+            "w": "udah",
+            "t": 0.395
+          },
+          {
+            "w": "ganti",
+            "t": 0.54
+          },
+          {
+            "w": "tiga",
+            "t": 0.801
+          },
+          {
+            "w": "kali,",
+            "t": 1.058
+          },
+          {
+            "w": "parfum",
+            "t": 1.583
+          },
+          {
+            "w": "disemprot",
+            "t": 1.931
+          },
+          {
+            "w": "terus.",
+            "t": 2.401
+          },
+          {
+            "w": "Wanginya",
+            "t": 3.3
+          },
+          {
+            "w": "cuma",
+            "t": 3.655
+          },
+          {
+            "w": "sebentar,",
+            "t": 3.89
+          },
+          {
+            "w": "baunya",
+            "t": 4.431
+          },
+          {
+            "w": "balik",
+            "t": 4.768
+          },
+          {
+            "w": "lagi.",
+            "t": 5.081
+          }
+        ],
+        "seconds": 5.57
+      }
+    },
+    {
+      "shot": "reveal",
+      "seconds": 4.14,
+      "vo": {
+        "text": "Ternyata sumbernya ada di balik dasbor, di evaporator AC.",
+        "tts": "[curious] Ternyata sumbernya ada di balik dasbor, di evaporator AC.",
+        "src": "audio/ep13/s04.mp3",
+        "words": [
+          {
+            "w": "Ternyata",
+            "t": 0.052
+          },
+          {
+            "w": "sumbernya",
+            "t": 0.522
+          },
+          {
+            "w": "ada",
+            "t": 1.078
+          },
+          {
+            "w": "di",
+            "t": 1.333
+          },
+          {
+            "w": "balik",
+            "t": 1.461
+          },
+          {
+            "w": "dasbor,",
+            "t": 1.774
+          },
+          {
+            "w": "di",
+            "t": 2.446
+          },
+          {
+            "w": "evaporator",
+            "t": 2.609
+          },
+          {
+            "w": "AC.",
+            "t": 3.537
+          }
+        ],
+        "seconds": 4.02
+      }
+    },
+    {
+      "shot": "explain",
+      "seconds": 6.05,
+      "vo": {
+        "text": "Bagian paling dingin ini selalu lembap, jadi jamur gampang tumbuh. Apalagi kalau filter kabin kotor dan saluran airnya mampet.",
+        "tts": "[explaining] Bagian paling dingin ini selalu lembap, jadi jamur gampang tumbuh. Apalagi kalau filter kabin kotor dan saluran airnya mampet.",
+        "src": "audio/ep13/s05.mp3",
+        "words": [
+          {
+            "w": "Bagian",
+            "t": 0.052
+          },
+          {
+            "w": "paling",
+            "t": 0.188
+          },
+          {
+            "w": "dingin",
+            "t": 0.459
+          },
+          {
+            "w": "ini",
+            "t": 0.692
+          },
+          {
+            "w": "selalu",
+            "t": 0.883
+          },
+          {
+            "w": "lembap,",
+            "t": 1.173
+          },
+          {
+            "w": "jadi",
+            "t": 1.649
+          },
+          {
+            "w": "jamur",
+            "t": 1.875
+          },
+          {
+            "w": "gampang",
+            "t": 2.136
+          },
+          {
+            "w": "tumbuh.",
+            "t": 2.518
+          },
+          {
+            "w": "Apalagi",
+            "t": 3.051
+          },
+          {
+            "w": "kalau",
+            "t": 3.457
+          },
+          {
+            "w": "filter",
+            "t": 3.681
+          },
+          {
+            "w": "kabin",
+            "t": 4.014
+          },
+          {
+            "w": "kotor",
+            "t": 4.292
+          },
+          {
+            "w": "dan",
+            "t": 4.657
+          },
+          {
+            "w": "saluran",
+            "t": 4.849
+          },
+          {
+            "w": "airnya",
+            "t": 5.214
+          },
+          {
+            "w": "mampet.",
+            "t": 5.562
+          }
+        ],
+        "seconds": 5.93
+      }
+    },
+    {
+      "shot": "inspect",
+      "seconds": 2.84,
+      "vo": {
+        "text": "Di Doktermobil, teknisi cek dulu pakai kamera kecil.",
+        "tts": "[confident] Di Doktermobil, teknisi cek dulu pakai kamera kecil.",
+        "src": "audio/ep13/s06.mp3",
+        "words": [
+          {
+            "w": "Di",
+            "t": 0.052
+          },
+          {
+            "w": "Doktermobil,",
+            "t": 0.114
+          },
+          {
+            "w": "teknisi",
+            "t": 0.799
+          },
+          {
+            "w": "cek",
+            "t": 1.175
+          },
+          {
+            "w": "dulu",
+            "t": 1.383
+          },
+          {
+            "w": "pakai",
+            "t": 1.644
+          },
+          {
+            "w": "kamera",
+            "t": 1.905
+          },
+          {
+            "w": "kecil.",
+            "t": 2.218
+          }
+        ],
+        "seconds": 2.72
+      }
+    },
+    {
+      "shot": "clean",
+      "seconds": 4.16,
+      "vo": {
+        "text": "Evaporator dibersihkan, filter kabin diganti, saluran air dilancarkan.",
+        "tts": "[upbeat] Evaporator dibersihkan, filter kabin diganti, saluran air dilancarkan.",
+        "src": "audio/ep13/s07.mp3",
+        "words": [
+          {
+            "w": "Evaporator",
+            "t": 0.052
+          },
+          {
+            "w": "dibersihkan,",
+            "t": 0.61
+          },
+          {
+            "w": "filter",
+            "t": 1.303
+          },
+          {
+            "w": "kabin",
+            "t": 1.636
+          },
+          {
+            "w": "diganti,",
+            "t": 1.914
+          },
+          {
+            "w": "saluran",
+            "t": 2.488
+          },
+          {
+            "w": "air",
+            "t": 2.923
+          },
+          {
+            "w": "dilancarkan.",
+            "t": 3.218
+          }
+        ],
+        "seconds": 4.04
+      }
+    },
+    {
+      "shot": "result",
+      "seconds": 3.63,
+      "vo": {
+        "text": "AC dingin lagi, wangi lagi, dan gebetannya mau diajak jalan lagi.",
+        "tts": "[happy] AC dingin lagi, wangi lagi, dan gebetannya mau diajak jalan lagi.",
+        "src": "audio/ep13/s08.mp3",
+        "words": [
+          {
+            "w": "AC",
+            "t": 0.052
+          },
+          {
+            "w": "dingin",
+            "t": 0.126
+          },
+          {
+            "w": "lagi,",
+            "t": 0.377
+          },
+          {
+            "w": "wangi",
+            "t": 0.829
+          },
+          {
+            "w": "lagi,",
+            "t": 1.142
+          },
+          {
+            "w": "dan",
+            "t": 1.594
+          },
+          {
+            "w": "gebetannya",
+            "t": 1.75
+          },
+          {
+            "w": "mau",
+            "t": 2.255
+          },
+          {
+            "w": "diajak",
+            "t": 2.516
+          },
+          {
+            "w": "jalan",
+            "t": 2.916
+          },
+          {
+            "w": "lagi.",
+            "t": 3.215
+          }
+        ],
+        "seconds": 3.51
+      }
+    },
+    {
+      "shot": "cta",
+      "seconds": 5.73,
+      "vo": {
+        "text": "AC mobilmu mulai apek? Langsung bersihin di Doktermobil. Klik link di bio, karena di Doktermobil pasti beres!",
+        "tts": "[friendly] AC mobilmu mulai apek? [excited] Langsung bersihin di Doktermobil. Klik link di bio, karena di Doktermobil pasti beres!",
+        "src": "audio/ep13/s09.mp3",
+        "words": [
+          {
+            "w": "AC",
+            "t": 0.052
+          },
+          {
+            "w": "mobilmu",
+            "t": 0.133
+          },
+          {
+            "w": "mulai",
+            "t": 0.481
+          },
+          {
+            "w": "apek?",
+            "t": 0.777
+          },
+          {
+            "w": "Langsung",
+            "t": 1.393
+          },
+          {
+            "w": "bersihin",
+            "t": 1.532
+          },
+          {
+            "w": "di",
+            "t": 2.023
+          },
+          {
+            "w": "Doktermobil.",
+            "t": 2.151
+          },
+          {
+            "w": "Klik",
+            "t": 2.777
+          },
+          {
+            "w": "link",
+            "t": 2.979
+          },
+          {
+            "w": "di",
+            "t": 3.114
+          },
+          {
+            "w": "bio,",
+            "t": 3.23
+          },
+          {
+            "w": "karena",
+            "t": 3.557
+          },
+          {
+            "w": "di",
+            "t": 3.879
+          },
+          {
+            "w": "Doktermobil",
+            "t": 3.96
+          },
+          {
+            "w": "pasti",
+            "t": 4.635
+          },
+          {
+            "w": "beres!",
+            "t": 5.09
+          }
+        ],
+        "seconds": 5.61
+      },
+      "outro": true
+    }
+  ],
+  "captionHighlight": [
+    "kambing",
+    "malu",
+    "apek",
+    "pengharum",
+    "parfum",
+    "balik",
+    "dasbor",
+    "evaporator",
+    "lembap",
+    "jamur",
+    "filter",
+    "mampet",
+    "kamera",
+    "dibersihkan",
+    "diganti",
+    "dilancarkan",
+    "wangi",
+    "Doktermobil",
+    "bio",
+    "beres"
+  ],
+  "cta": {
+    "line": "Langsung bersihin di Doktermobil",
+    "eyebrow": "AC MOBIL BAU APEK?",
+    "button": "KLIK LINK DI BIO",
+    "tagline": "Spesialis AC & Tune Up · Pasti Beres",
+    "at": "langsung"
+  },
+  "claims": [
+    {
+      "text": "Evaporator adalah bagian AC paling dingin; uap air mengembun di siripnya sehingga area itu lembap dan bisa ditumbuhi jamur/bakteri yang menimbulkan bau apek.",
+      "source": "Penjelasan teknis umum, perlu cek teknisi",
+      "reviewed": false
+    },
+    {
+      "text": "Filter kabin kotor dan saluran pembuangan air (drain) evaporator yang mampet ikut memicu bau apek.",
+      "source": "Perlu cek teknisi",
+      "reviewed": false
+    },
+    {
+      "text": "Penanganan: pembersihan evaporator, ganti filter kabin, lancarkan saluran air; Doktermobil memakai kamera inspeksi.",
+      "source": "Prosedur Doktermobil, perlu konfirmasi",
+      "reviewed": false
+    },
+    {
+      "text": "Tip: matikan AC (kompresor) sebentar sebelum sampai sementara kipas tetap jalan untuk mengeringkan evaporator.",
+      "source": "Perlu cek teknisi",
+      "reviewed": false
+    },
+    {
+      "text": "Kartu CTA: evaporator bersih, filter kabin baru, dingin & segar lagi (hasil layanan pembersihan AC).",
+      "source": "Layanan Doktermobil, perlu konfirmasi",
+      "reviewed": false
+    }
+  ],
+  "post": {
+    "caption": "Gebetan turun dari mobil sambil nutup hidung? Bau apek kayak kambing tiap AC nyala biasanya dari evaporator yang berjamur, filter kabin kotor, atau saluran air AC yang mampet. Pengharum cuma nutupin bau. Langsung bersihin AC di Doktermobil, klik link di bio. Di Doktermobil pasti beres!\n\nCerita ilustrasi; tokoh fiktif.\n\n#doktermobil #acmobil #servisacmobil #acmobilbau #tipsmobil"
+  }
+}

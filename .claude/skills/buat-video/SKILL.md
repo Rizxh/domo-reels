@@ -32,6 +32,9 @@ sections, checks and the quality bar the user approved).
      (speed 1.2) and a beat on every key word. Commands: `npm run
      soft:voice | soft:check | soft:look | soft:render | soft:thumb -- <id>`.
      Ending line: "Follow Doktermobil untuk info otomotif lainnya!"
+   - **Toon (2D characters in a 3D world, edukasi / fun fact / sejarah)**: use the `/buat-toon` skill
+     (`.claude/skills/buat-toon/SKILL.md`): formula Hook emosional, Isi, STAR, CTA (`docs/toon/FORMULA.md`),
+     theme bank `docs/toon/TEMA.md`, reference EP11. Preferred for "fun fact" and "sejarah" topics.
    - **Mitos atau Fakta (2D)**: schema `src/schema.ts`. Cheapest, fully templated.
    - **Talking head**: only when the user supplies footage.
    If the request does not settle the format, pick the default above and say so.
